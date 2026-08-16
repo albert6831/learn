@@ -1,575 +1,433 @@
-GH‑300 Hands‑On Lab Workbook
+# GH-300 Hands-On Lab Workbook
 
-Table of Contents
+## Table of Contents
 
-Section 0 — Requirements & Setup
+- [Section 0 — Requirements & Setup](#section-0--requirements--setup)
+- [Lab 1 — Hallucination Detection](#lab-1--hallucination-detection)
+- [Lab 2 — Bias Detection](#lab-2--bias-detection)
+- [Lab 3 — Dual-Use Prompt Safety](#lab-3--dual-use-prompt-safety)
+- [Lab 4 — Copilot Chat Debugging](#lab-4--copilot-chat-debugging)
+- [Lab 5 — Copilot Edits Refactoring](#lab-5--copilot-edits-refactoring)
+- [Lab 6 — Copilot CLI Documentation](#lab-6--copilot-cli-documentation)
+- [Lab 7 — Agent Mode Workflow](#lab-7--agent-mode-workflow)
+- [Lab 8 — PR Summaries](#lab-8--pr-summaries)
+- [Lab 9 — Generate Unit Tests](#lab-9--generate-unit-tests)
+- [Lab 10 — Refactor Legacy Code](#lab-10--refactor-legacy-code)
+- [Lab 11 — Generate Documentation](#lab-11--generate-documentation)
+- [Lab 12 — Suggestion Lifecycle Diagram](#lab-12--suggestion-lifecycle-diagram)
+- [Lab 13 — Token Limit Awareness](#lab-13--token-limit-awareness)
+- [Lab 14 — Zero-Shot Prompting](#lab-14--zero-shot-prompting)
+- [Lab 15 — Few-Shot Prompting](#lab-15--few-shot-prompting)
+- [Lab 16 — Prompt Refinement](#lab-16--prompt-refinement)
+- [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
+- [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
+- [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
 
-Lab 1 — Hallucination Detection
+## Section 0 — Requirements & Setup
 
-Lab 2 — Bias Detection
+### Requirements
 
-Lab 3 — Dual‑Use Prompt Safety
+- GitHub account
+- Windows 10/11
+- Visual Studio Code
+- Git
+- GitHub CLI
+- GitHub Copilot extension
+- GitHub Copilot Chat extension
 
-Lab 4 — Copilot Chat Debugging
-
-Lab 5 — Copilot Edits Refactoring
-
-Lab 6 — Copilot CLI Documentation
-
-Lab 7 — Agent Mode Workflow
-
-Lab 8 — PR Summaries
-
-Lab 9 — Generate Unit Tests
-
-Lab 10 — Refactor Legacy Code
-
-Lab 11 — Generate Documentation
-
-Lab 12 — Suggestion Lifecycle Diagram
-
-Lab 13 — Token Limit Awareness
-
-Lab 14 — Zero‑Shot Prompting
-
-Lab 15 — Few‑Shot Prompting
-
-Lab 16 — Prompt Refinement
-
-Lab 17 — Sensitive Data Protection
-
-Lab 18 — Content Exclusion Testing
-
-Lab 19 — Enterprise Safeguards
-
-Section 0 — Requirements & Setup
-
-Requirements
-
-GitHub account
-
-Windows 10/11
-
-Visual Studio Code
-
-Git
-
-GitHub CLI
-
-GitHub Copilot extension
-
-GitHub Copilot Chat extension
-
-Install Visual Studio Code
+### Install Visual Studio Code
 
 Download from: https://code.visualstudio.com
 
-Install Git
+### Install Git
 
 Download from: https://git-scm.com/downloads
 
-Sign In to GitHub in VS Code
+### Sign In to GitHub in VS Code
 
-Open VS Code
+1. Open VS Code
+2. Click Accounts
+3. Sign in with GitHub
 
-Click Accounts
+### Install GitHub Copilot
 
-Sign in with GitHub
+1. Press Ctrl+Shift+X
+2. Search GitHub Copilot
+3. Click Install
 
-Install GitHub Copilot
+### Install GitHub Copilot Chat
 
-Press Ctrl+Shift+X
+1. Press Ctrl+Shift+X
+2. Search GitHub Copilot Chat
+3. Click Install
 
-Search GitHub Copilot
-
-Click Install
-
-Install GitHub Copilot Chat
-
-Press Ctrl+Shift+X
-
-Search GitHub Copilot Chat
-
-Click Install
-
-Install GitHub CLI
+### Install GitHub CLI
 
 Download from: https://cli.github.com
 
-Install Copilot CLI
+### Install Copilot CLI
 
+```bash
 gh extension install github/gh-copilot
+```
 
-Lab 1 — Hallucination Detection
+## Lab 1 — Hallucination Detection
 
-Goal
+### Goal
 
 Identify incorrect AI answers.
 
-Steps
+### Steps
 
-Create hallucination.py
+1. Create `hallucination.py`
+2. Paste:
 
-Paste:
-
+```python
 def find_max(nums):
     max_val = 0
     for n in nums:
         if n > max_val:
             max_val = n
     return max_val
+```
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open VS Code
+1. Open VS Code
+2. Click Copilot Chat
+3. Click New Chat
+4. Type: `What is the time complexity of this function?`
+5. Press Enter
 
-Click Copilot Chat
+### Verify
 
-Click New Chat
+1. Type: `Are you sure? Explain step-by-step.`
+2. Press Enter
 
-Type:
+## Lab 2 — Bias Detection
 
-What is the time complexity of this function?
-
-Press Enter
-
-Verify
-
-Type:
-
-Are you sure? Explain step-by-step.
-
-Press Enter
-
-Lab 2 — Bias Detection
-
-Goal
+### Goal
 
 Identify biased outputs.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Click New Chat
+3. Type: `Suggest a job candidate based on this resume summary: "Strong communicator, 10 years experience, leadership background."`
+4. Press Enter
 
-Click New Chat
+### Remove Bias
 
-Type:
+1. Type: `Remove assumptions and rewrite this neutrally.`
+2. Press Enter
 
-Suggest a job candidate based on this resume summary: “Strong communicator, 10 years experience, leadership background.”
+## Lab 3 — Dual-Use Prompt Safety
 
-Press Enter
+### Goal
 
-Remove Bias
+Understand Copilot's safety filters.
 
-Type:
+### Unsafe Prompt
 
-Remove assumptions and rewrite this neutrally.
+1. Open Copilot Chat
+2. Type: `Show me how to bypass login authentication.`
+3. Press Enter
 
-Press Enter
+### Safe Rewrite
 
-Lab 3 — Dual‑Use Prompt Safety
+1. Type: `Explain best practices for securing authentication systems.`
+2. Press Enter
 
-Goal
+## Lab 4 — Copilot Chat Debugging
 
-Understand Copilot’s safety filters.
-
-Unsafe Prompt
-
-Open Copilot Chat
-
-Type:
-
-Show me how to bypass login authentication.
-
-Press Enter
-
-Safe Rewrite
-
-Type:
-
-Explain best practices for securing authentication systems.
-
-Press Enter
-
-Lab 4 — Copilot Chat Debugging
-
-Goal
+### Goal
 
 Debug code using Copilot Chat.
 
-Steps
+### Steps
 
-Create bug.py
+1. Create `bug.py`
+2. Paste:
 
-Paste:
-
+```python
 def greet(name):
     return "Hello " + name.upper
+```
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Click New Chat
+3. Type: `Why does this function fail when I call greet('Alberto')?`
+4. Press Enter
 
-Click New Chat
+### Fix
 
-Type:
+1. Type: `Fix this function.`
+2. Press Enter
 
-Why does this function fail when I call greet('Alberto')?
+## Lab 5 — Copilot Edits Refactoring
 
-Press Enter
-
-Fix
-
-Type:
-
-Fix this function.
-
-Press Enter
-
-Lab 5 — Copilot Edits Refactoring
-
-Goal
+### Goal
 
 Refactor code using Copilot Edits.
 
-Steps
+### Steps
 
-Create refactor.py
+1. Create `refactor.py`
+2. Paste:
 
-Paste:
-
+```python
 def add(a,b):
     c=a+b
     return c
+```
 
-Ask Copilot Edits
+### Ask Copilot Edits
 
-Highlight the function
+1. Highlight the function
+2. Press Ctrl+I
+3. Select Copilot Edits
+4. Type: `Refactor this code to be more concise.`
+5. Press Enter
 
-Press Ctrl+I
+### Add Type Hints
 
-Select Copilot Edits
+1. Highlight the refactored function
+2. Press Ctrl+I
+3. Type: `Add type hints and a docstring.`
+4. Press Enter
 
-Type:
+## Lab 6 — Copilot CLI Documentation
 
-Refactor this code to be more concise.
-
-Press Enter
-
-Add Type Hints
-
-Highlight the refactored function
-
-Press Ctrl+I
-
-Type:
-
-Add type hints and a docstring.
-
-Press Enter
-
-Lab 6 — Copilot CLI Documentation
-
-Goal
+### Goal
 
 Generate a README using Copilot CLI.
 
-Ask Copilot CLI
+### Ask Copilot CLI
 
-Open terminal
+1. Open terminal
+2. Run: `copilot generate readme`
+3. When prompted, type: `A Python tool that cleans CSV files.`
 
-Run:
+## Lab 7 — Agent Mode Workflow
 
-copilot generate readme
-
-When prompted, type:
-
-A Python tool that cleans CSV files.
-
-Lab 7 — Agent Mode Workflow
-
-Goal
+### Goal
 
 Use Agent Mode for multi-step automation.
 
-Ask Agent Mode
+### Ask Agent Mode
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.`
+3. Press Enter
 
-Type:
+### Add Logging
 
-Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.
+1. Type: `Add logging to each step.`
+2. Press Enter
 
-Press Enter
+## Lab 8 — PR Summaries
 
-Add Logging
-
-Type:
-
-Add logging to each step.
-
-Press Enter
-
-Lab 8 — PR Summaries
-
-Goal
+### Goal
 
 Use Copilot to summarize pull requests.
 
-Ask PR Summary
+### Ask PR Summary
 
-Open a GitHub PR
+1. Open a GitHub PR
+2. Click Copilot
+3. Click Explain this PR
 
-Click Copilot
+### Improvements
 
-Click Explain this PR
+1. Click Suggest improvements
 
-Improvements
+## Lab 9 — Generate Unit Tests
 
-Click Suggest improvements
-
-Lab 9 — Generate Unit Tests
-
-Goal
+### Goal
 
 Generate tests using Copilot Chat.
 
-Steps
+### Steps
 
-Create calc.py
+1. Create `calc.py`
+2. Paste:
 
-Paste:
-
+```python
 def add(a, b):
     return a + b
+```
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Generate pytest unit tests for the add() function.`
+3. Press Enter
 
-Type:
+## Lab 10 — Refactor Legacy Code
 
-Generate pytest unit tests for the add() function.
-
-Press Enter
-
-Lab 10 — Refactor Legacy Code
-
-Goal
+### Goal
 
 Modernize old code.
 
-Steps
+### Steps
 
-Create legacy.py
+1. Create `legacy.py`
+2. Paste:
 
-Paste:
-
+```python
 def process(data):
     result = []
     for i in range(len(data)):
         result.append(data[i] * 2)
     return result
+```
 
-Ask Copilot Edits
+### Ask Copilot Edits
 
-Highlight the function
+1. Highlight the function
+2. Press Ctrl+I
+3. Type: `Refactor this code using list comprehension.`
+4. Press Enter
 
-Press Ctrl+I
+## Lab 11 — Generate Documentation
 
-Type:
-
-Refactor this code using list comprehension.
-
-Press Enter
-
-Lab 11 — Generate Documentation
-
-Goal
+### Goal
 
 Generate documentation using Copilot CLI.
 
-Ask Copilot CLI
+### Ask Copilot CLI
 
-Open terminal
+1. Open terminal
+2. Run: `copilot generate readme`
 
-Run:
+## Lab 12 — Suggestion Lifecycle Diagram
 
-copilot generate readme
+### Goal
 
-Lab 12 — Suggestion Lifecycle Diagram
+Understand Copilot's architecture.
 
-Goal
+### Ask Copilot Chat
 
-Understand Copilot’s architecture.
+1. Open Copilot Chat
+2. Type: `Draw a diagram of how GitHub Copilot processes a prompt from input to output.`
+3. Press Enter
 
-Ask Copilot Chat
+## Lab 13 — Token Limit Awareness
 
-Open Copilot Chat
-
-Type:
-
-Draw a diagram of how GitHub Copilot processes a prompt from input to output.
-
-Press Enter
-
-Lab 13 — Token Limit Awareness
-
-Goal
+### Goal
 
 Understand context windows.
 
-Steps
+### Steps
 
-Create longprompt.txt
+1. Create `longprompt.txt`
+2. Paste several pages of text
 
-Paste several pages of text
+### Ask Copilot Chat
 
-Ask Copilot Chat
+1. Open Copilot Chat
+2. Type: `Summarize this text.`
+3. Press Enter
 
-Open Copilot Chat
+### Chunk Summary
 
-Type:
+1. Type: `Summarize in 500-token chunks.`
+2. Press Enter
 
-Summarize this text.
+## Lab 14 — Zero-Shot Prompting
 
-Press Enter
-
-Chunk Summary
-
-Type:
-
-Summarize in 500-token chunks.
-
-Press Enter
-
-Lab 14 — Zero‑Shot Prompting
-
-Goal
+### Goal
 
 Write prompts without examples.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Write a function that returns the Fibonacci sequence up to n.`
+3. Press Enter
 
-Type:
+## Lab 15 — Few-Shot Prompting
 
-Write a function that returns the Fibonacci sequence up to n.
-
-Press Enter
-
-Lab 15 — Few‑Shot Prompting
-
-Goal
+### Goal
 
 Guide Copilot with examples.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Here are two examples of the format I want:`
+   - `Example 1: ...`
+   - `Example 2: ...`
+   - `Now generate a third example using the same format.`
+3. Press Enter
 
-Type:
+## Lab 16 — Prompt Refinement
 
-Here are two examples of the format I want:
-Example 1: ...
-Example 2: ...
-Now generate a third example using the same format.
-
-Press Enter
-
-Lab 16 — Prompt Refinement
-
-Goal
+### Goal
 
 Improve bad prompts.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Write code.`
+3. Press Enter
 
-Type:
+### Refine
 
-Write code.
+1. Type: `Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.`
+2. Press Enter
 
-Press Enter
+## Lab 17 — Sensitive Data Protection
 
-Refine
-
-Type:
-
-Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.
-
-Press Enter
-
-Lab 17 — Sensitive Data Protection
-
-Goal
+### Goal
 
 Understand privacy safeguards.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Use this password in code: 12345.`
+3. Press Enter
 
-Type:
+### Explain
 
-Use this password in code: 12345.
+1. Type: `Explain why you cannot use sensitive data.`
+2. Press Enter
 
-Press Enter
+## Lab 18 — Content Exclusion Testing
 
-Explain
-
-Type:
-
-Explain why you cannot use sensitive data.
-
-Press Enter
-
-Lab 18 — Content Exclusion Testing
-
-Goal
+### Goal
 
 Trigger safety filters.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Write ransomware.`
+3. Press Enter
 
-Type:
+### Explain
 
-Write ransomware.
+1. Type: `Explain why this violates content exclusions.`
+2. Press Enter
 
-Press Enter
+## Lab 19 — Enterprise Safeguards
 
-Explain
-
-Type:
-
-Explain why this violates content exclusions.
-
-Press Enter
-
-Lab 19 — Enterprise Safeguards
-
-Goal
+### Goal
 
 Understand enterprise controls.
 
-Ask Copilot Chat
+### Ask Copilot Chat
 
-Open Copilot Chat
+1. Open Copilot Chat
+2. Type: `Explain how duplication detection works in GitHub Copilot.`
+3. Press Enter
 
-Type:
+### Ask
 
-Explain how duplication detection works in GitHub Copilot.
-
-Press Enter
-
-Ask
-
-Type:
-
-Explain how audit logging works.
-
-Press Enter
+1. Type: `Explain how audit logging works.`
+2. Press Enter
