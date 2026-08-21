@@ -382,25 +382,47 @@ Use Copilot to summarize pull requests.
 
 ### Context
 
-A pull request often contains more changed files and discussion than a reviewer can absorb immediately. This lab explores how Copilot can provide an initial explanation and identify possible improvements, while leaving the final review and technical judgment to the human reviewer.
+A pull request can contain more information than a reviewer can quickly absorb. This lab shows how Copilot can provide an initial summary while the reviewer checks the actual code.
 
-### Ask PR Summary
+### Create a GitHub PR on GitHub.com
 
-1. Open a GitHub PR
-2. Click Copilot
-3. Click Explain this PR
+Create a practice pull request on GitHub:
+
+1. Open a repository you own. If you do not have one, select **+ > New repository** on GitHub and create it without adding files.
+2. On the repository's **Code** tab, open the branch menu, select **Create new branch**, name it `practice-pr-summary`, and select **Create new branch**.
+3. Select **Add file > Create new file**.
+4. Name the file `README.md` and add a short description, such as `This project is for GitHub Copilot PR summary practice.`
+5. Under **Commit new file**, confirm that the change is committed to `practice-pr-summary`, then select **Commit new file**.
+6. Select **Compare & pull request** when GitHub displays the notification, or select **Pull requests > New pull request**.
+7. Set the base branch to the default branch and the compare branch to `practice-pr-summary`.
+8. Add a short title and description, then select **Create pull request**.
+9. Open the new PR from the repository's **Pull requests** tab.
+
+Do not use confidential information or real credentials in the practice file.
+
+### Ask GitHub Copilot for a Summary
+
+1. On GitHub.com, open the practice pull request from the repository's **Pull requests** tab.
+2. Review the title, description, changed files, conversation, and check results.
+3. Click Copilot.
+4. Click **Explain this PR**.
 
 ### What You Should See
 
-Copilot should display a summary of the pull request's purpose and main changes, usually organized around changed files or themes. Compare the explanation with the actual diff before relying on it.
+Copilot should display a summary of the pull request's purpose and main changes. Compare the summary with the pull request title, description, changed files, and check results. Look for details that are missing or inaccurate.
 
 ### Improvements
 
-1. Click Suggest improvements
+1. Click **Suggest improvements**.
+2. Check one suggestion against the changed code before treating it as a valid review comment.
 
 ### What You Should See
 
-Copilot should list possible improvements or review suggestions. These are recommendations, not confirmed defects, so check each one against the code and project requirements.
+Copilot should list possible improvements. These are recommendations, not confirmed defects, so verify them against the code and project requirements.
+
+### Verify
+
+Compare Copilot's output with the pull request. Identify one accurate detail and one missing or incorrect detail. Do not approve or merge based only on Copilot's summary.
 
 ---
 
