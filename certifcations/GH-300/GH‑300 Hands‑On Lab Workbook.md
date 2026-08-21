@@ -40,9 +40,10 @@
 
 - GitHub account
 - Windows 10/11
+- Active GitHub Copilot subscription
 - Visual Studio Code
 - Git
-- GitHub CLI
+- PowerShell 6 or later
 - GitHub Copilot extension
 - GitHub Copilot Chat extension
 
@@ -77,9 +78,48 @@ Download from: https://cli.github.com
 
 ### Install Copilot CLI
 
-```bash
-gh extension install github/gh-copilot
+Copilot CLI is installed separately from GitHub CLI. Do not install it through the older GitHub CLI extension workflow.
+
+#### Option 1: Install with WinGet
+
+Open PowerShell and run:
+
+```powershell
+winget source update
+winget install --id GitHub.Copilot --source winget
 ```
+
+If WinGet cannot find the package, search for the current package ID:
+
+```powershell
+winget search GitHub.Copilot
+```
+
+Close and reopen PowerShell and VS Code after installation. Verify the installation:
+
+```powershell
+copilot --version
+Get-Command copilot -All
+```
+
+### Sign In to Copilot CLI
+
+1. Open a terminal in a trusted project folder.
+2. Start Copilot CLI by running `copilot`.
+3. If prompted, confirm that you trust the current folder.
+4. Enter `/login` in the Copilot CLI prompt.
+5. Complete the GitHub sign-in in your browser.
+
+Copilot CLI may read, modify, or execute files below its current folder. Use it only in folders whose contents you trust.
+
+### Use Copilot CLI in VS Code
+
+1. Open the project folder in VS Code.
+2. Open **Terminal > New Terminal**.
+3. Run `copilot` in the integrated PowerShell terminal.
+4. Review and approve file or command permissions individually.
+
+The GitHub Copilot and GitHub Copilot Chat extensions provide the VS Code editor and chat integration. The `copilot` command runs separately in the integrated terminal.
 
 ---
 
@@ -293,12 +333,13 @@ Good documentation explains what a project does, how to use it, and what users n
 ### Ask Copilot CLI
 
 1. Open terminal
-2. Run: `copilot generate readme`
-3. When prompted, type: `A Python tool that cleans CSV files.`
+2. Change to the project folder.
+3. Run: `copilot`
+4. When prompted, enter: `Create or update README.md for this repository. Describe a Python tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.`
 
 ### What You Should See
 
-Copilot CLI should generate README content with a project description and likely sections such as usage, installation, and examples. The exact output can vary, and you may need to provide project-specific commands and prerequisites.
+Copilot CLI should propose README content with a project description and likely sections such as usage, installation, and examples. Review the proposed changes and approve them only after checking the commands and prerequisites against the project.
 
 ---
 
@@ -444,11 +485,13 @@ Documentation generation is useful when a project has code but lacks a clear ent
 ### Ask Copilot CLI
 
 1. Open terminal
-2. Run: `copilot generate readme`
+2. Change to the project folder.
+3. Run: `copilot`
+4. Ask Copilot CLI to create or improve the README after it inspects the repository.
 
 ### What You Should See
 
-Copilot CLI should ask for project context or generate an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions.
+Copilot CLI should ask for project context or propose an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions. Review the result against the repository before accepting it.
 
 ---
 
