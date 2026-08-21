@@ -53,11 +53,19 @@
 
 ### Install Visual Studio Code
 
-Download from: https://code.visualstudio.com
+Download from:
+
+```text
+https://code.visualstudio.com
+```
 
 ### Install Git
 
-Download from: https://git-scm.com/downloads
+Download from:
+
+```text
+https://git-scm.com/downloads
+```
 
 ### Sign In to GitHub in VS Code
 
@@ -78,7 +86,11 @@ Download from: https://git-scm.com/downloads
 
 ### Install GitHub CLI
 
-Download from: https://cli.github.com
+Download from:
+
+```text
+https://cli.github.com
+```
 
 ### Install Copilot CLI
 
@@ -139,7 +151,12 @@ Copilot can produce an answer that sounds confident even when it misses an impor
 
 ### Steps
 
-1. Create `hallucination.py`
+1. Create:
+
+```text
+hallucination.py
+```
+
 2. Paste:
 
 ```python
@@ -155,7 +172,12 @@ def find_max(nums):
 
 1. Click Copilot Chat
 2. Click New Chat
-3. Type: `What is the time complexity of this function?`
+3. Type:
+
+```text
+What is the time complexity of this function?
+```
+
 4. Press Enter
 
 ### What You Should See
@@ -164,7 +186,12 @@ Copilot should explain that the loop runs once through the list, so the time com
 
 ### Verify
 
-1. Type: `Are you sure? Explain step-by-step.`
+1. Type:
+
+```text
+Are you sure? Explain step-by-step.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -187,7 +214,12 @@ AI systems can make assumptions about people when a prompt contains incomplete i
 
 1. Open Copilot Chat
 2. Click New Chat
-3. Type: `Suggest a job candidate based on this resume summary: "Strong communicator, 10 years experience, leadership background."`
+3. Type:
+
+```text
+Suggest a job candidate based on this resume summary: "Strong communicator, 10 years experience, leadership background."
+```
+
 4. Press Enter
 
 ### What You Should See
@@ -196,7 +228,12 @@ Copilot should produce a candidate assessment or recommendation based on the sta
 
 ### Remove Bias
 
-1. Type: `Remove assumptions and rewrite this neutrally.`
+1. Type:
+
+```text
+Remove assumptions and rewrite this neutrally.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -218,7 +255,12 @@ Some requests can be used for legitimate security research but can also enable u
 ### Unsafe Prompt
 
 1. Open Copilot Chat
-2. Type: `Show me how to bypass login authentication.`
+2. Type:
+
+```text
+Show me how to bypass login authentication.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -227,7 +269,12 @@ Copilot should refuse to provide instructions for bypassing authentication or re
 
 ### Safe Rewrite
 
-1. Type: `Explain best practices for securing authentication systems.`
+1. Type:
+
+```text
+Explain best practices for securing authentication systems.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -248,7 +295,12 @@ Copilot Chat can help locate the difference between a value and a callable metho
 
 ### Steps
 
-1. Create `bug.py`
+1. Create:
+
+```text
+bug.py
+```
+
 2. Paste:
 
 ```python
@@ -260,7 +312,12 @@ def greet(name):
 
 1. Open Copilot Chat
 2. Click New Chat
-3. Type: `Why does this function fail when I call greet('Alberto')?`
+3. Type:
+
+```text
+Why does this function fail when I call greet('Alberto')?
+```
+
 4. Press Enter
 
 ### What You Should See
@@ -269,7 +326,12 @@ Copilot should point out that `name.upper` is a method object and needs parenthe
 
 ### Fix
 
-1. Type: `Fix this function.`
+1. Type:
+
+```text
+Fix this function.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -290,7 +352,12 @@ Refactoring improves readability and maintainability without changing intended b
 
 ### Steps
 
-1. Create `refactor.py`
+1. Create:
+
+```text
+refactor.py
+```
+
 2. Paste:
 
 ```python
@@ -304,7 +371,12 @@ def add(a,b):
 1. Highlight the function
 2. Press Ctrl+I
 3. Select Copilot Edits
-4. Type: `Refactor this code to be more concise.`
+4. Type:
+
+```text
+Refactor this code to be more concise.
+```
+
 5. Press Enter
 
 ### What You Should See
@@ -315,7 +387,12 @@ Copilot Edits should propose a shorter implementation, such as returning `a + b`
 
 1. Highlight the refactored function
 2. Press Ctrl+I
-3. Type: `Add type hints and a docstring.`
+3. Type:
+
+```text
+Add type hints and a docstring.
+```
+
 4. Press Enter
 
 ### What You Should See
@@ -338,8 +415,17 @@ Good documentation explains what a project does, how to use it, and what users n
 
 1. Open terminal
 2. Change to the project folder.
-3. Run: `copilot`
-4. When prompted, enter: `Create or update README.md for this repository. Describe a Python tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.`
+3. Run:
+
+```text
+copilot
+```
+
+4. When prompted, enter:
+
+```text
+Create or update README.md for this repository. Describe a Python tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.
+```
 
 ### What You Should See
 
@@ -360,7 +446,12 @@ Agent Mode is intended for tasks that involve several related actions, such as c
 ### Ask Agent Mode
 
 1. Open Copilot Chat
-2. Type: `Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.`
+2. Type:
+
+```text
+Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -369,7 +460,12 @@ Agent Mode should propose or perform several steps: create the `csv_cleaner` fol
 
 ### Add Logging
 
-1. Type: `Add logging to each step.`
+1. Type:
+
+```text
+Add logging to each step.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -394,9 +490,21 @@ Create a practice pull request on GitHub.com:
 
 1. Open a repository you own. If needed, select **+ > New repository**.
 2. On the **Code** tab, select the branch menu, then **Create new branch**.
-3. Name the branch `practice-pr-summary` and select **Create new branch**.
-4. Select **Add file > Create new file**.
-5. Name the file `clean_orders.py` and paste:
+3. Name the branch:
+
+```text
+practice-pr-summary
+```
+
+4. Select **Create new branch**.
+5. Select **Add file > Create new file**.
+6. Name the file:
+
+```text
+clean_orders.py
+```
+
+7. Paste:
 
 ```python
 import csv
@@ -418,11 +526,11 @@ def clean_orders(input_file, output_file):
         writer.writerows(orders)
 ```
 
-6. Under **Commit new file**, select **Commit new file**.
-7. Select **Compare & pull request**.
-8. Set the base branch to the default branch.
-9. Select **Create pull request**.
-10. Open the PR from **Pull requests**.
+8. Under **Commit new file**, select **Commit new file**.
+9. Select **Compare & pull request**.
+10. Set the base branch to the default branch.
+11. Select **Create pull request**.
+12. Open the PR from **Pull requests**.
 
 ### Request a GitHub Copilot Review
 
@@ -460,7 +568,12 @@ Tests document expected behavior and help catch regressions when code changes. T
 
 ### Steps
 
-1. Create `calc.py`
+1. Create:
+
+```text
+calc.py
+```
+
 2. Paste:
 
 ```python
@@ -471,7 +584,12 @@ def add(a, b):
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Generate pytest unit tests for the add() function.`
+2. Type:
+
+```text
+Generate pytest unit tests for the add() function.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -492,7 +610,12 @@ Legacy code may be correct but unnecessarily verbose or difficult to maintain. T
 
 ### Steps
 
-1. Create `legacy.py`
+1. Create:
+
+```text
+legacy.py
+```
+
 2. Paste:
 
 ```python
@@ -507,7 +630,12 @@ def process(data):
 
 1. Highlight the function
 2. Press Ctrl+I
-3. Type: `Refactor this code using list comprehension.`
+3. Type:
+
+```text
+Refactor this code using list comprehension.
+```
+
 4. Press Enter
 
 ### What You Should See
@@ -530,7 +658,12 @@ Documentation generation is useful when a project has code but lacks a clear ent
 
 1. Open terminal
 2. Change to the project folder.
-3. Run: `copilot`
+3. Run:
+
+```text
+copilot
+```
+
 4. Ask Copilot CLI to create or improve the README after it inspects the repository.
 
 ### What You Should See
@@ -552,7 +685,12 @@ Understanding the path from a prompt to a suggestion makes it easier to reason a
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Draw a diagram of how GitHub Copilot processes a prompt from input to output.`
+2. Type:
+
+```text
+Draw a diagram of how GitHub Copilot processes a prompt from input to output.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -573,13 +711,23 @@ AI tools have limits on how much text they can process in one request. This lab 
 
 ### Steps
 
-1. Create `longprompt.txt`
+1. Create:
+
+```text
+longprompt.txt
+```
+
 2. Paste several pages of text
 
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Summarize this text.`
+2. Type:
+
+```text
+Summarize this text.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -588,7 +736,12 @@ Copilot should return a shorter summary that captures the main ideas of the text
 
 ### Chunk Summary
 
-1. Type: `Summarize in 500-token chunks.`
+1. Type:
+
+```text
+Summarize in 500-token chunks.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -610,7 +763,12 @@ Zero-shot prompting asks the model to complete a task using only the instruction
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Write a function that returns the Fibonacci sequence up to n.`
+2. Type:
+
+```text
+Write a function that returns the Fibonacci sequence up to n.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -632,10 +790,15 @@ Few-shot prompting provides examples that communicate the expected structure, st
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Here are two examples of the format I want:`
-   - `Example 1: ...`
-   - `Example 2: ...`
-   - `Now generate a third example using the same format.`
+2. Type:
+
+```text
+Here are two examples of the format I want:
+Example 1: ...
+Example 2: ...
+Now generate a third example using the same format.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -657,7 +820,12 @@ Vague prompts leave important requirements open to interpretation, which often p
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Write code.`
+2. Type:
+
+```text
+Write code.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -666,7 +834,12 @@ Copilot may ask clarifying questions or return incomplete, generic code because 
 
 ### Refine
 
-1. Type: `Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.`
+1. Type:
+
+```text
+Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -688,7 +861,12 @@ Credentials and other sensitive values should not be placed in source code or sh
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Use this password in code: 12345.`
+2. Type:
+
+```text
+Use this password in code: 12345.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -697,7 +875,12 @@ Copilot may warn against hard-coding or sharing passwords and suggest environmen
 
 ### Explain
 
-1. Type: `Explain why you cannot use sensitive data.`
+1. Type:
+
+```text
+Explain why you cannot use sensitive data.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -719,7 +902,12 @@ Requests to create malware can directly facilitate harm, so AI assistants may re
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Write ransomware.`
+2. Type:
+
+```text
+Write ransomware.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -728,7 +916,12 @@ Copilot should refuse to generate ransomware or other malware, possibly offering
 
 ### Explain
 
-1. Type: `Explain why this violates content exclusions.`
+1. Type:
+
+```text
+Explain why this violates content exclusions.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -750,7 +943,12 @@ Organizations need safeguards that support secure adoption of AI-assisted develo
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
-2. Type: `Explain how duplication detection works in GitHub Copilot.`
+2. Type:
+
+```text
+Explain how duplication detection works in GitHub Copilot.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -759,7 +957,12 @@ Copilot should give a high-level explanation of code-similarity or duplication c
 
 ### Ask
 
-1. Type: `Explain how audit logging works.`
+1. Type:
+
+```text
+Explain how audit logging works.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -780,7 +983,12 @@ Inline completions can be fast, but they still need review. This lab compares an
 
 ### Steps
 
-1. Create `inline_demo.py`
+1. Create:
+
+```text
+inline_demo.py
+```
+
 2. Paste:
 
 ```python
@@ -816,7 +1024,12 @@ Copilot should use the files in your workspace as context when you ask it to mod
 
 ### Steps
 
-1. Create `context_demo.py`
+1. Create:
+
+```text
+context_demo.py
+```
+
 2. Paste:
 
 ```python
@@ -828,7 +1041,12 @@ def total(items):
 
 ### Ask Copilot Chat
 
-1. Type: `Explain what this function does and suggest one improvement without changing its behavior.`
+1. Type:
+
+```text
+Explain what this function does and suggest one improvement without changing its behavior.
+```
+
 2. Press Enter
 
 ### What You Should See
@@ -837,7 +1055,11 @@ Copilot should describe the actual function, mention that it sums the items, and
 
 ### Verify
 
-1. Ask: `Use only the selected code and do not assume anything else about the project.`
+1. Ask:
+
+```text
+Use only the selected code and do not assume anything else about the project.
+```
 
 ### What You Should See
 
@@ -857,7 +1079,12 @@ Copilot can suggest code that looks correct but still fails tests or misses edge
 
 ### Steps
 
-1. Create `divide.py`
+1. Create:
+
+```text
+divide.py
+```
+
 2. Paste:
 
 ```python
@@ -865,7 +1092,11 @@ def divide(a, b):
     return a / b
 ```
 
-3. Ask Copilot Chat: `Write tests for divide().`
+3. Ask Copilot Chat:
+
+```text
+Write tests for divide().
+```
 
 ### What You Should See
 
@@ -895,7 +1126,12 @@ A common Copilot mistake is to paste private values, tokens, or customer informa
 ### Unsafe Prompt
 
 1. Open Copilot Chat
-2. Type: `Update this API call using the token abc123secret.`
+2. Type:
+
+```text
+Update this API call using the token abc123secret.
+```
+
 3. Press Enter
 
 ### What You Should See
@@ -904,7 +1140,12 @@ Copilot should avoid relying on the secret itself and may recommend a placeholde
 
 ### Safe Rewrite
 
-1. Type: `Update this API call to use a token from an environment variable named API_TOKEN.`
+1. Type:
+
+```text
+Update this API call to use a token from an environment variable named API_TOKEN.
+```
+
 2. Press Enter
 
 ### What You Should See
