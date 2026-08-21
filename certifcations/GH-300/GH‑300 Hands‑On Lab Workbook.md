@@ -31,6 +31,10 @@
 - [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
 - [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
 - [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
+- [Lab 20 — Inline Completion Review](#lab-20--inline-completion-review)
+- [Lab 21 — Workspace Context Grounding](#lab-21--workspace-context-grounding)
+- [Lab 22 — Verification Before Acceptance](#lab-22--verification-before-acceptance)
+- [Lab 23 — Sensitive Prompt Handling](#lab-23--sensitive-prompt-handling)
 
 </details>
 
@@ -131,7 +135,7 @@ Identify incorrect AI answers.
 
 ### Context
 
-Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small Python function to practice checking an AI explanation against the code and asking for reasoning before accepting the result.
+Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small Python function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
 
 ### Steps
 
@@ -156,7 +160,7 @@ def find_max(nums):
 
 ### What You Should See
 
-Copilot should explain that the loop runs once through the list, so the time complexity is $O(n)$. It may also mention that the function's initialization is constant time. Do not treat the answer as complete until you notice that starting `max_val` at `0` gives an incorrect result for lists containing only negative numbers.
+Copilot should explain that the loop runs once through the list, so the time complexity is $O(n)$. It may also mention that the function's initialization is constant time. Do not treat the answer as complete until you verify whether the function is also correct for negative inputs.
 
 ### Verify
 
@@ -177,7 +181,7 @@ Identify biased outputs.
 
 ### Context
 
-AI systems can make assumptions about people when a prompt contains incomplete information. This lab demonstrates how to recognize those assumptions and refine an answer so it focuses on relevant evidence rather than stereotypes or unsupported conclusions.
+AI systems can make assumptions about people when a prompt contains incomplete information. This lab demonstrates how to recognize those assumptions and refine an answer so it focuses on relevant qualifications only.
 
 ### Ask Copilot Chat
 
@@ -209,7 +213,7 @@ Understand Copilot's safety filters.
 
 ### Context
 
-Some requests can be used for legitimate security research but can also enable unauthorized access. This lab contrasts a harmful request with a defensive alternative so you can recognize how to ask for useful security guidance without requesting instructions for abuse.
+Some requests can be used for legitimate security research but can also enable unauthorized access. This lab contrasts a harmful request with a defensive alternative so you can recognize how to ask safe, authorized questions.
 
 ### Unsafe Prompt
 
@@ -240,7 +244,7 @@ Debug code using Copilot Chat.
 
 ### Context
 
-Copilot Chat can help locate the difference between a value and a callable method, explain the resulting error, and suggest a correction. This lab gives you a small reproducible bug so you can compare Copilot's diagnosis with the actual Python behavior.
+Copilot Chat can help locate the difference between a value and a callable method, explain the resulting error, and suggest a correction. This lab gives you a small reproducible bug so you can compare the explanation with the source code.
 
 ### Steps
 
@@ -282,7 +286,7 @@ Refactor code using Copilot Edits.
 
 ### Context
 
-Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation so you can see how targeted edit requests build on one another.
+Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation.
 
 ### Steps
 
@@ -305,7 +309,7 @@ def add(a,b):
 
 ### What You Should See
 
-Copilot Edits should propose a shorter implementation, such as returning `a + b` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review or accept.
+Copilot Edits should propose a shorter implementation, such as returning `a + b` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review.
 
 ### Add Type Hints
 
@@ -328,7 +332,7 @@ Generate a README using Copilot CLI.
 
 ### Context
 
-Good documentation explains what a project does, how to use it, and what users need before they begin. This lab introduces Copilot CLI as a terminal-based way to turn a short project description into an initial README that can then be reviewed and edited.
+Good documentation explains what a project does, how to use it, and what users need before they begin. This lab introduces Copilot CLI as a terminal-based way to turn a short project description into repository documentation.
 
 ### Ask Copilot CLI
 
@@ -339,7 +343,7 @@ Good documentation explains what a project does, how to use it, and what users n
 
 ### What You Should See
 
-Copilot CLI should propose README content with a project description and likely sections such as usage, installation, and examples. Review the proposed changes and approve them only after checking the commands and prerequisites against the project.
+Copilot CLI should propose README content with a project description and likely sections such as usage, installation, and examples. Review the proposed changes and approve them only after checking that they match the repository.
 
 ---
 
@@ -351,7 +355,7 @@ Use Agent Mode for multi-step automation.
 
 ### Context
 
-Agent Mode is intended for tasks that involve several related actions, such as creating files, implementing logic, and improving the result. This lab lets you observe how Copilot handles a multi-step CSV workflow and how a follow-up request can extend the generated solution with logging.
+Agent Mode is intended for tasks that involve several related actions, such as creating files, implementing logic, and improving the result. This lab lets you observe how Copilot handles a multi-step request.
 
 ### Ask Agent Mode
 
@@ -361,7 +365,7 @@ Agent Mode is intended for tasks that involve several related actions, such as c
 
 ### What You Should See
 
-Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a Python script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes and approvals before allowing them to run.
+Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a Python script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes before accepting them.
 
 ### Add Logging
 
@@ -370,7 +374,7 @@ Agent Mode should propose or perform several steps: create the `csv_cleaner` fol
 
 ### What You Should See
 
-The script should be updated with logging around the main workflow, such as reading the input, cleaning values, and writing the output. The generated code should use appropriate log levels and remain runnable.
+The script should be updated with logging around the main workflow, such as reading the input, cleaning values, and writing the output. The generated code should use appropriate log levels and remain readable.
 
 ---
 
@@ -452,7 +456,7 @@ Generate tests using Copilot Chat.
 
 ### Context
 
-Tests document expected behavior and help catch regressions when code changes. This lab uses a simple function so you can evaluate whether Copilot generates useful pytest cases, including normal inputs, boundary cases, and any assumptions about the function's contract.
+Tests document expected behavior and help catch regressions when code changes. This lab uses a simple function so you can evaluate whether Copilot generates useful pytest cases, including normal and edge cases.
 
 ### Steps
 
@@ -472,7 +476,7 @@ def add(a, b):
 
 ### What You Should See
 
-Copilot should generate pytest code that imports or calls `add()` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run them to verify that they pass.
+Copilot should generate pytest code that imports or calls `add()` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run them to verify the behavior.
 
 ---
 
@@ -484,7 +488,7 @@ Modernize old code.
 
 ### Context
 
-Legacy code may be correct but unnecessarily verbose or difficult to maintain. This lab practices using Copilot to express a loop with a list comprehension while checking that the refactoring preserves the original behavior.
+Legacy code may be correct but unnecessarily verbose or difficult to maintain. This lab practices using Copilot to express a loop with a list comprehension while checking that the refactoring preserves behavior.
 
 ### Steps
 
@@ -520,7 +524,7 @@ Generate documentation using Copilot CLI.
 
 ### Context
 
-Documentation generation is useful when a project has code but lacks a clear entry point for users or contributors. This lab revisits README generation from the command line so you can assess the quality of the output and identify information that still needs human input.
+Documentation generation is useful when a project has code but lacks a clear entry point for users or contributors. This lab revisits README generation from the command line so you can assess the quality of the output after Copilot inspects the repository.
 
 ### Ask Copilot CLI
 
@@ -531,7 +535,7 @@ Documentation generation is useful when a project has code but lacks a clear ent
 
 ### What You Should See
 
-Copilot CLI should ask for project context or propose an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions. Review the result against the repository before accepting it.
+Copilot CLI should ask for project context or propose an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions.
 
 ---
 
@@ -543,7 +547,7 @@ Understand Copilot's architecture.
 
 ### Context
 
-Understanding the path from a prompt to a suggestion makes it easier to reason about context, filtering, and model output. This lab asks Copilot to represent that process visually, helping you identify the major stages without treating the system as a black box.
+Understanding the path from a prompt to a suggestion makes it easier to reason about context, filtering, and model output. This lab asks Copilot to represent that process visually, helping you identify the main stages of a response.
 
 ### Ask Copilot Chat
 
@@ -553,7 +557,7 @@ Understanding the path from a prompt to a suggestion makes it easier to reason a
 
 ### What You Should See
 
-Copilot should return a diagram or diagram markup showing a flow from the user's prompt through context gathering and model processing to a suggestion or response. Treat the diagram as a high-level explanation rather than an exhaustive implementation detail.
+Copilot should return a diagram or diagram markup showing a flow from the user's prompt through context gathering and model processing to a suggestion or response. Treat the diagram as a high-level explanation, not an implementation detail.
 
 ---
 
@@ -565,7 +569,7 @@ Understand context windows.
 
 ### Context
 
-AI tools have limits on how much text they can process in one request. This lab demonstrates why long inputs may need to be summarized in smaller chunks and gives you a way to compare a broad summary with controlled, token-sized summaries.
+AI tools have limits on how much text they can process in one request. This lab demonstrates why long inputs may need to be summarized in smaller chunks and gives you a way to compare a broad summary with chunked summaries.
 
 ### Steps
 
@@ -589,7 +593,7 @@ Copilot should return a shorter summary that captures the main ideas of the text
 
 ### What You Should See
 
-Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing or repeated information.
+Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing details.
 
 ---
 
@@ -601,7 +605,7 @@ Write prompts without examples.
 
 ### Context
 
-Zero-shot prompting asks the model to complete a task using only the instructions provided. This lab establishes a baseline for judging how much detail Copilot can infer when no example output or additional pattern is supplied.
+Zero-shot prompting asks the model to complete a task using only the instructions provided. This lab establishes a baseline for judging how much detail Copilot can infer when no example output or format is supplied.
 
 ### Ask Copilot Chat
 
@@ -611,7 +615,7 @@ Zero-shot prompting asks the model to complete a task using only the instruction
 
 ### What You Should See
 
-Copilot should generate a function, likely with a loop or recurrence, that returns Fibonacci values up to a stopping condition involving `n`. Check how it interprets “up to n,” especially whether `n` is a maximum value or a number of terms.
+Copilot should generate a function, likely with a loop or recurrence, that returns Fibonacci values up to a stopping condition involving `n`. Check how it interprets “up to n,” especially whether it treats it as length, maximum value, or index.
 
 ---
 
@@ -623,7 +627,7 @@ Guide Copilot with examples.
 
 ### Context
 
-Few-shot prompting provides examples that communicate the expected structure, style, or level of detail. This lab shows how examples can guide Copilot toward a more consistent result than a request that describes the task alone.
+Few-shot prompting provides examples that communicate the expected structure, style, or level of detail. This lab shows how examples can guide Copilot toward a more consistent result than a request without examples.
 
 ### Ask Copilot Chat
 
@@ -636,7 +640,7 @@ Few-shot prompting provides examples that communicate the expected structure, st
 
 ### What You Should See
 
-Copilot should produce a third example that follows the structure and style of the two examples. Compare its fields, ordering, and level of detail with the examples rather than judging only the subject matter.
+Copilot should produce a third example that follows the structure and style of the two examples. Compare its fields, ordering, and level of detail with the examples rather than judging only the surface wording.
 
 ---
 
@@ -648,7 +652,7 @@ Improve bad prompts.
 
 ### Context
 
-Vague prompts leave important requirements open to interpretation, which often produces incomplete code. This lab compares a minimal request with a refined prompt that specifies the language, validation approach, documentation, and error handling.
+Vague prompts leave important requirements open to interpretation, which often produces incomplete code. This lab compares a minimal request with a refined prompt that specifies the language, validation logic, and expected behavior.
 
 ### Ask Copilot Chat
 
@@ -667,7 +671,7 @@ Copilot may ask clarifying questions or return incomplete, generic code because 
 
 ### What You Should See
 
-The refined response should be more specific: it should contain Python code, a regular expression, a docstring, and an explicit approach to invalid input or errors. Review the validation rules because email syntax is broader than a simple pattern.
+The refined response should be more specific: it should contain Python code, a regular expression, a docstring, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
 
 ---
 
@@ -679,7 +683,7 @@ Understand privacy safeguards.
 
 ### Context
 
-Credentials and other sensitive values should not be placed in source code or shared unnecessarily with AI tools. This lab uses an intentionally unsafe example to explore how Copilot responds and why secret management practices are part of responsible development.
+Credentials and other sensitive values should not be placed in source code or shared unnecessarily with AI tools. This lab uses an intentionally unsafe example to explore how Copilot responds and how to rewrite the request safely.
 
 ### Ask Copilot Chat
 
@@ -710,7 +714,7 @@ Trigger safety filters.
 
 ### Context
 
-Requests to create malware can directly facilitate harm, so AI assistants may refuse them or redirect toward defensive material. This lab helps you recognize that boundary and understand how content exclusions support safer use of coding assistants.
+Requests to create malware can directly facilitate harm, so AI assistants may refuse them or redirect toward defensive material. This lab helps you recognize that boundary and understand how to continue safely.
 
 ### Ask Copilot Chat
 
@@ -741,7 +745,7 @@ Understand enterprise controls.
 
 ### Context
 
-Organizations need safeguards that support secure adoption of AI-assisted development at scale. This lab introduces duplication detection and audit logging as examples of controls that help organizations manage code similarity, accountability, and oversight.
+Organizations need safeguards that support secure adoption of AI-assisted development at scale. This lab introduces duplication detection and audit logging as examples of controls that help organizations review activity.
 
 ### Ask Copilot Chat
 
@@ -751,7 +755,7 @@ Organizations need safeguards that support secure adoption of AI-assisted develo
 
 ### What You Should See
 
-Copilot should give a high-level explanation of code-similarity or duplication checks and why organizations may use them to review generated suggestions. Product behavior and policy details can vary, so verify important claims against current GitHub documentation.
+Copilot should give a high-level explanation of code-similarity or duplication checks and why organizations may use them to review generated suggestions. Product behavior and policy details can vary.
 
 ### Ask
 
@@ -760,4 +764,149 @@ Copilot should give a high-level explanation of code-similarity or duplication c
 
 ### What You Should See
 
-Copilot should explain that audit logs record relevant organizational events so administrators can review activity, investigate issues, and support compliance. The exact events and retention depend on the organization's plan and configuration.
+Copilot should explain that audit logs record relevant organizational events so administrators can review activity, investigate issues, and support compliance. The exact events and retention depend on the environment.
+
+---
+
+## Lab 20 — Inline Completion Review
+
+### Goal
+
+Practice accepting, rejecting, and editing inline completions.
+
+### Context
+
+Inline completions can be fast, but they still need review. This lab compares an editor suggestion with the code you intended to write so you can spot when a completion is useful or when it introduces a wrong assumption.
+
+### Steps
+
+1. Create `inline_demo.py`
+2. Paste:
+
+```python
+def square_list(values):
+```
+
+3. On the next line, begin typing `return [` or `result = []` so Copilot can suggest an inline completion.
+
+### What You Should See
+
+Copilot may suggest a full implementation inline in the editor.
+
+### Verify
+
+1. Accept the suggestion once.
+2. Then deliberately reject the next suggestion and finish the function yourself.
+
+### What You Should See
+
+You should be able to compare how Copilot behaves when accepted versus rejected. A good result is one that matches the intended behavior without extra logic.
+
+---
+
+## Lab 21 — Workspace Context Grounding
+
+### Goal
+
+Check whether Copilot uses the current file and workspace correctly.
+
+### Context
+
+Copilot should use the files in your workspace as context when you ask it to modify code. This lab helps you verify that it grounds its answer in the actual repository instead of inventing details.
+
+### Steps
+
+1. Create `context_demo.py`
+2. Paste:
+
+```python
+def total(items):
+    return sum(items)
+```
+
+3. Select the function.
+
+### Ask Copilot Chat
+
+1. Type: `Explain what this function does and suggest one improvement without changing its behavior.`
+2. Press Enter
+
+### What You Should See
+
+Copilot should describe the actual function, mention that it sums the items, and propose a small improvement such as adding a docstring, type hints, or a better name.
+
+### Verify
+
+1. Ask: `Use only the selected code and do not assume anything else about the project.`
+
+### What You Should See
+
+The answer should stay limited to the selected code instead of referring to unrelated files or imagined dependencies.
+
+---
+
+## Lab 22 — Verification Before Acceptance
+
+### Goal
+
+Practice checking generated code before using it.
+
+### Context
+
+Copilot can suggest code that looks correct but still fails tests or misses edge cases. This lab focuses on the habit of verifying generated output with a test run or by reading the diff carefully.
+
+### Steps
+
+1. Create `divide.py`
+2. Paste:
+
+```python
+def divide(a, b):
+    return a / b
+```
+
+3. Ask Copilot Chat: `Write tests for divide().`
+
+### What You Should See
+
+Copilot should produce tests for normal input and at least one edge case such as division by zero.
+
+### Verify
+
+1. Run the tests.
+2. If Copilot suggests code changes, inspect the diff before accepting.
+
+### What You Should See
+
+You should confirm whether the tests pass and whether the generated implementation handles edge cases the way you expect.
+
+---
+
+## Lab 23 — Sensitive Prompt Handling
+
+### Goal
+
+Rewrite a request that includes private data into a safer version.
+
+### Context
+
+A common Copilot mistake is to paste private values, tokens, or customer information into a prompt. This lab practices replacing the sensitive parts with placeholders while keeping the task useful.
+
+### Unsafe Prompt
+
+1. Open Copilot Chat
+2. Type: `Update this API call using the token abc123secret.`
+3. Press Enter
+
+### What You Should See
+
+Copilot should avoid relying on the secret itself and may recommend a placeholder or environment variable.
+
+### Safe Rewrite
+
+1. Type: `Update this API call to use a token from an environment variable named API_TOKEN.`
+2. Press Enter
+
+### What You Should See
+
+Copilot should rewrite the example in a safer way and avoid echoing or storing the secret directly in code.
