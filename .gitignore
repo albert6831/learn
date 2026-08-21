@@ -1,0 +1,3 @@
+# Ignore practice folders anywhere in the repo
+practice/
+**/practice/
