@@ -400,29 +400,29 @@ Create a practice pull request on GitHub:
 
 Do not use confidential information or real credentials in the practice file.
 
-### Ask GitHub Copilot for a Summary
+### Request a GitHub Copilot Review
 
 1. On GitHub.com, open the practice pull request from the repository's **Pull requests** tab.
 2. Review the title, description, changed files, conversation, and check results.
-3. Click Copilot.
-4. Click **Explain this PR**.
+3. In the right sidebar, find **Reviewers**.
+4. Next to **Copilot**, select **Request**.
+5. Wait for Copilot to review the pull request, then read its review comments.
 
 ### What You Should See
 
-Copilot should display a summary of the pull request's purpose and main changes. Compare the summary with the pull request title, description, changed files, and check results. Look for details that are missing or inaccurate.
+Copilot should add review comments about possible bugs, security concerns, tests, or maintainability. Compare each comment with the changed code before accepting it.
 
-### Improvements
+### If Copilot Is Not Listed
 
-1. Click **Suggest improvements**.
-2. Check one suggestion against the changed code before treating it as a valid review comment.
+Copilot code review may not be available for every account or repository. Availability depends on the Copilot plan, repository permissions, and organization settings. If **Copilot** is not listed under **Reviewers**, record that result and do not treat the feature as available for this lab.
 
 ### What You Should See
 
-Copilot should list possible improvements. These are recommendations, not confirmed defects, so verify them against the code and project requirements.
+If Copilot is available, it should appear under **Reviewers** with a **Request** option. If it is unavailable, GitHub will not show that option.
 
 ### Verify
 
-Compare Copilot's output with the pull request. Identify one accurate detail and one missing or incorrect detail. Do not approve or merge based only on Copilot's summary.
+Compare Copilot's review comments with the pull request. Identify one useful comment and verify it against the code. Do not approve or merge based only on Copilot's review.
 
 ---
 
