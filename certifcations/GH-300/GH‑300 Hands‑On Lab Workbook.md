@@ -382,16 +382,17 @@ Use Copilot to summarize pull requests.
 
 ### Context
 
-A pull request can contain more information than a reviewer can quickly absorb. This lab shows how Copilot can provide an initial summary while the reviewer checks the actual code.
+A pull request can contain a lot of information. Use Copilot to review the code.
 
 ### Create a GitHub PR on GitHub.com
 
-Create a practice pull request on GitHub:
+Create a practice pull request on GitHub.com:
 
-1. Open a repository you own. If you do not have one, select **+ > New repository** on GitHub and create it without adding files.
-2. On the repository's **Code** tab, open the branch menu, select **Create new branch**, name it `practice-pr-summary`, and select **Create new branch**.
-3. Select **Add file > Create new file**.
-4. Name the file `clean_orders.py` and paste this code:
+1. Open a repository you own. If needed, select **+ > New repository**.
+2. On the **Code** tab, select the branch menu, then **Create new branch**.
+3. Name the branch `practice-pr-summary` and select **Create new branch**.
+4. Select **Add file > Create new file**.
+5. Name the file `clean_orders.py` and paste:
 
 ```python
 import csv
@@ -413,38 +414,33 @@ def clean_orders(input_file, output_file):
         writer.writerows(orders)
 ```
 
-This is intentionally small but realistic: ask Copilot to look for bugs, missing validation, error handling, and security or maintainability concerns.
-5. Under **Commit new file**, confirm that the change is committed to `practice-pr-summary`, then select **Commit new file**.
-6. Select **Compare & pull request** when GitHub displays the notification, or select **Pull requests > New pull request**.
-7. Set the base branch to the default branch and the compare branch to `practice-pr-summary`.
-8. Add a short title and description, then select **Create pull request**.
-9. Open the new PR from the repository's **Pull requests** tab.
-
-Do not use confidential information or real credentials in the practice file.
+6. Under **Commit new file**, select **Commit new file**.
+7. Select **Compare & pull request**.
+8. Set the base branch to the default branch.
+9. Select **Create pull request**.
+10. Open the PR from **Pull requests**.
 
 ### Request a GitHub Copilot Review
 
-1. On GitHub.com, open the practice pull request from the repository's **Pull requests** tab.
-2. Review the title, description, changed files, conversation, and check results.
-3. In the right sidebar, find **Reviewers**.
-4. Next to **Copilot**, select **Request**.
-5. Wait for Copilot to review the pull request, then read its review comments.
+1. Open the PR on GitHub.com.
+2. In **Reviewers**, select **Copilot > Request**.
+3. Read Copilot's review comments.
 
 ### What You Should See
 
-Copilot should add review comments about possible bugs, security concerns, tests, or maintainability. Compare each comment with the changed code before accepting it.
+Copilot may identify bugs, security concerns, testing gaps, or maintenance issues.
 
 ### If Copilot Is Not Listed
 
-Copilot code review may not be available for every account or repository. Availability depends on the Copilot plan, repository permissions, and organization settings. If **Copilot** is not listed under **Reviewers**, record that result and do not treat the feature as available for this lab.
+If **Copilot** is not listed under **Reviewers**, it is not available for your account or repository.
 
 ### What You Should See
 
-If Copilot is available, it should appear under **Reviewers** with a **Request** option. If it is unavailable, GitHub will not show that option.
+GitHub only shows **Request** when Copilot code review is available.
 
 ### Verify
 
-Compare Copilot's review comments with the pull request. Identify one useful comment and verify it against the code. Do not approve or merge based only on Copilot's review.
+Check one comment against the code. Do not approve or merge based only on Copilot's review.
 
 ---
 
