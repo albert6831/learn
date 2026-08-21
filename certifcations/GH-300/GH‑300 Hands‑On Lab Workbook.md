@@ -1,5 +1,14 @@
 # GH-300 Hands-On Lab Workbook
 
+> **Purpose**
+> Use this workbook to practice responsible GitHub Copilot usage through short, observable exercises. Each lab includes the action to take and the result you should look for.
+
+> **Recommended rhythm**
+> **Prepare** the code or workspace → **Ask** Copilot → **Review** the response or proposed change → **Verify** it against the source, diff, or tests.
+
+<details>
+<summary><strong>Open the lab index</strong></summary>
+
 ## Table of Contents
 
 - [Section 0 — Requirements & Setup](#section-0--requirements--setup)
@@ -22,6 +31,8 @@
 - [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
 - [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
 - [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
+
+</details>
 
 ## Section 0 — Requirements & Setup
 
@@ -70,6 +81,8 @@ Download from: https://cli.github.com
 gh extension install github/gh-copilot
 ```
 
+---
+
 ## Lab 1 — Hallucination Detection
 
 ### Goal
@@ -114,6 +127,8 @@ Copilot should explain that the loop runs once through the list, so the time com
 
 Copilot should walk through the loop and may identify the negative-number edge case. A strong answer distinguishes the $O(n)$ time complexity from the separate correctness problem.
 
+---
+
 ## Lab 2 — Bias Detection
 
 ### Goal
@@ -144,6 +159,8 @@ Copilot should produce a candidate assessment or recommendation based on the sta
 
 The revised response should focus on observable qualifications and job-related evidence. It should acknowledge that the summary alone is not enough to determine who is the best candidate.
 
+---
+
 ## Lab 3 — Dual-Use Prompt Safety
 
 ### Goal
@@ -172,6 +189,8 @@ Copilot should refuse to provide instructions for bypassing authentication or re
 ### What You Should See
 
 Copilot should provide defensive guidance such as strong password storage, multi-factor authentication, secure session handling, rate limiting, and logging.
+
+---
 
 ## Lab 4 — Copilot Chat Debugging
 
@@ -212,6 +231,8 @@ Copilot should point out that `name.upper` is a method object and needs parenthe
 ### What You Should See
 
 Copilot should change the expression to `name.upper()` and explain that calling the method returns the uppercase string `ALBERTO`.
+
+---
 
 ## Lab 5 — Copilot Edits Refactoring
 
@@ -257,6 +278,8 @@ Copilot Edits should propose a shorter implementation, such as returning `a + b`
 
 The function should gain type annotations for its parameters and return value, plus a docstring describing the addition operation. Review the inferred types before accepting the edit.
 
+---
+
 ## Lab 6 — Copilot CLI Documentation
 
 ### Goal
@@ -276,6 +299,8 @@ Good documentation explains what a project does, how to use it, and what users n
 ### What You Should See
 
 Copilot CLI should generate README content with a project description and likely sections such as usage, installation, and examples. The exact output can vary, and you may need to provide project-specific commands and prerequisites.
+
+---
 
 ## Lab 7 — Agent Mode Workflow
 
@@ -306,6 +331,8 @@ Agent Mode should propose or perform several steps: create the `csv_cleaner` fol
 
 The script should be updated with logging around the main workflow, such as reading the input, cleaning values, and writing the output. The generated code should use appropriate log levels and remain runnable.
 
+---
+
 ## Lab 8 — PR Summaries
 
 ### Goal
@@ -333,6 +360,8 @@ Copilot should display a summary of the pull request's purpose and main changes,
 ### What You Should See
 
 Copilot should list possible improvements or review suggestions. These are recommendations, not confirmed defects, so check each one against the code and project requirements.
+
+---
 
 ## Lab 9 — Generate Unit Tests
 
@@ -363,6 +392,8 @@ def add(a, b):
 ### What You Should See
 
 Copilot should generate pytest code that imports or calls `add()` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run them to verify that they pass.
+
+---
 
 ## Lab 10 — Refactor Legacy Code
 
@@ -398,6 +429,8 @@ def process(data):
 
 Copilot Edits should replace the indexed loop with a list comprehension equivalent to `[value * 2 for value in data]`. The function should still return a new list with every input value doubled.
 
+---
+
 ## Lab 11 — Generate Documentation
 
 ### Goal
@@ -416,6 +449,8 @@ Documentation generation is useful when a project has code but lacks a clear ent
 ### What You Should See
 
 Copilot CLI should ask for project context or generate an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions.
+
+---
 
 ## Lab 12 — Suggestion Lifecycle Diagram
 
@@ -436,6 +471,8 @@ Understanding the path from a prompt to a suggestion makes it easier to reason a
 ### What You Should See
 
 Copilot should return a diagram or diagram markup showing a flow from the user's prompt through context gathering and model processing to a suggestion or response. Treat the diagram as a high-level explanation rather than an exhaustive implementation detail.
+
+---
 
 ## Lab 13 — Token Limit Awareness
 
@@ -471,6 +508,8 @@ Copilot should return a shorter summary that captures the main ideas of the text
 
 Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing or repeated information.
 
+---
+
 ## Lab 14 — Zero-Shot Prompting
 
 ### Goal
@@ -490,6 +529,8 @@ Zero-shot prompting asks the model to complete a task using only the instruction
 ### What You Should See
 
 Copilot should generate a function, likely with a loop or recurrence, that returns Fibonacci values up to a stopping condition involving `n`. Check how it interprets “up to n,” especially whether `n` is a maximum value or a number of terms.
+
+---
 
 ## Lab 15 — Few-Shot Prompting
 
@@ -513,6 +554,8 @@ Few-shot prompting provides examples that communicate the expected structure, st
 ### What You Should See
 
 Copilot should produce a third example that follows the structure and style of the two examples. Compare its fields, ordering, and level of detail with the examples rather than judging only the subject matter.
+
+---
 
 ## Lab 16 — Prompt Refinement
 
@@ -543,6 +586,8 @@ Copilot may ask clarifying questions or return incomplete, generic code because 
 
 The refined response should be more specific: it should contain Python code, a regular expression, a docstring, and an explicit approach to invalid input or errors. Review the validation rules because email syntax is broader than a simple pattern.
 
+---
+
 ## Lab 17 — Sensitive Data Protection
 
 ### Goal
@@ -572,6 +617,8 @@ Copilot may warn against hard-coding or sharing passwords and suggest environmen
 
 Copilot should explain that exposing credentials can enable unauthorized access and that secrets should be protected, rotated, and supplied through secure configuration.
 
+---
+
 ## Lab 18 — Content Exclusion Testing
 
 ### Goal
@@ -600,6 +647,8 @@ Copilot should refuse to generate ransomware or other malware, possibly offering
 ### What You Should See
 
 Copilot should describe that ransomware would facilitate data encryption, extortion, or unauthorized disruption, so generating it is excluded. The explanation should remain high level and defensive.
+
+---
 
 ## Lab 19 — Enterprise Safeguards
 
