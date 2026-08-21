@@ -391,7 +391,29 @@ Create a practice pull request on GitHub:
 1. Open a repository you own. If you do not have one, select **+ > New repository** on GitHub and create it without adding files.
 2. On the repository's **Code** tab, open the branch menu, select **Create new branch**, name it `practice-pr-summary`, and select **Create new branch**.
 3. Select **Add file > Create new file**.
-4. Name the file `README.md` and add a short description, such as `This project is for GitHub Copilot PR summary practice.`
+4. Name the file `clean_orders.py` and paste this code:
+
+```python
+import csv
+
+
+def clean_orders(input_file, output_file):
+    with open(input_file) as source:
+        reader = csv.DictReader(source)
+        orders = []
+
+        for row in reader:
+            if row["email"]:
+                row["email"] = row["email"].lower()
+                orders.append(row)
+
+    with open(output_file, "w") as target:
+        writer = csv.DictWriter(target, fieldnames=reader.fieldnames)
+        writer.writeheader()
+        writer.writerows(orders)
+```
+
+This is intentionally small but realistic: ask Copilot to look for bugs, missing validation, error handling, and security or maintainability concerns.
 5. Under **Commit new file**, confirm that the change is committed to `practice-pr-summary`, then select **Commit new file**.
 6. Select **Compare & pull request** when GitHub displays the notification, or select **Pull requests > New pull request**.
 7. Set the base branch to the default branch and the compare branch to `practice-pr-summary`.
