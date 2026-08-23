@@ -12,29 +12,52 @@
 ## Table of Contents
 
 - [Section 0 — Requirements & Setup](#section-0--requirements--setup)
+
+### Use GitHub Copilot Responsibly
+
 - [Lab 1 — Hallucination Detection](#lab-1--hallucination-detection)
 - [Lab 2 — Bias Detection](#lab-2--bias-detection)
 - [Lab 3 — Dual-Use Prompt Safety](#lab-3--dual-use-prompt-safety)
+- [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
+- [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
+- [Lab 23 — Sensitive Prompt Handling](#lab-23--sensitive-prompt-handling)
+
+### Use GitHub Copilot Features
+
 - [Lab 4 — Copilot Chat Debugging](#lab-4--copilot-chat-debugging)
 - [Lab 5 — Copilot Edits Refactoring](#lab-5--copilot-edits-refactoring)
 - [Lab 6 — Copilot CLI Documentation](#lab-6--copilot-cli-documentation)
 - [Lab 7 — Agent Mode Workflow](#lab-7--agent-mode-workflow)
 - [Lab 8 — PR Summaries](#lab-8--pr-summaries)
-- [Lab 9 — Generate Unit Tests](#lab-9--generate-unit-tests)
-- [Lab 10 — Refactor Legacy Code](#lab-10--refactor-legacy-code)
-- [Lab 11 — Generate Documentation](#lab-11--generate-documentation)
+- [Lab 20 — Inline Completion Review](#lab-20--inline-completion-review)
+- [Lab 24 — Agent Sessions and Sub-agents](#lab-24--agent-sessions-and-sub-agents)
+- [Lab 25 — Custom Agents and Instructions](#lab-25--custom-agents-and-instructions)
+- [Lab 26 — MCP and External Tools](#lab-26--mcp-and-external-tools)
+- [Lab 27 — Copilot CLI Sessions](#lab-27--copilot-cli-sessions)
+
+### Understand Copilot Data and Architecture
+
 - [Lab 12 — Suggestion Lifecycle Diagram](#lab-12--suggestion-lifecycle-diagram)
 - [Lab 13 — Token Limit Awareness](#lab-13--token-limit-awareness)
+
+### Apply Prompt Engineering and Context Crafting
+
 - [Lab 14 — Zero-Shot Prompting](#lab-14--zero-shot-prompting)
 - [Lab 15 — Few-Shot Prompting](#lab-15--few-shot-prompting)
 - [Lab 16 — Prompt Refinement](#lab-16--prompt-refinement)
-- [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
-- [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
-- [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
-- [Lab 20 — Inline Completion Review](#lab-20--inline-completion-review)
 - [Lab 21 — Workspace Context Grounding](#lab-21--workspace-context-grounding)
+
+### Improve Developer Productivity
+
+- [Lab 9 — Generate Unit Tests](#lab-9--generate-unit-tests)
+- [Lab 10 — Refactor Legacy Code](#lab-10--refactor-legacy-code)
+- [Lab 11 — Generate Documentation](#lab-11--generate-documentation)
 - [Lab 22 — Verification Before Acceptance](#lab-22--verification-before-acceptance)
-- [Lab 23 — Sensitive Prompt Handling](#lab-23--sensitive-prompt-handling)
+
+### Configure Privacy, Content Exclusions, and Safeguards
+
+- [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
+- [Lab 28 — Organization Policies](#lab-28--organization-policies)
 
 </details>
 
@@ -1151,3 +1174,151 @@ Update this API call to use a token from an environment variable named API_TOKEN
 ### What You Should See
 
 Copilot should rewrite the example in a safer way and avoid echoing or storing the secret directly in code.
+
+---
+
+## Lab 24 — Agent Sessions and Sub-agents
+
+### Goal
+
+Use Agent Mode for a multi-step task.
+
+### Steps
+
+1. Open Copilot Chat in VS Code.
+2. Select **Agent** mode.
+3. Ask:
+
+```text
+Inspect this repository and suggest one documentation improvement. Use a sub-agent for file inspection if available.
+```
+
+4. Review the plan and session activity before approving actions.
+
+### What You Should See
+
+The agent may show a plan and delegate work to a sub-agent.
+
+### Verify
+
+Check that the result matches the files inspected.
+
+---
+
+## Lab 25 — Custom Agents and Instructions
+
+### Goal
+
+Customize Copilot's behavior.
+
+### Steps
+
+1. Create `.github/agents/reviewer.agent.md`.
+2. Add:
+
+```markdown
+---
+name: Reviewer
+description: Reviews Python changes briefly.
+---
+
+Review Python changes for bugs and missing tests. Be concise.
+```
+
+3. Open Copilot Chat and select the custom agent if it appears.
+4. Ask it to review a Python file.
+
+### What You Should See
+
+The agent should follow the profile instructions. Custom agents may be unavailable in some environments.
+
+### Verify
+
+Check that the response is concise and mentions bugs or tests.
+
+---
+
+## Lab 26 — MCP and External Tools
+
+### Goal
+
+Understand MCP tool access.
+
+### Steps
+
+1. Open Copilot Chat.
+2. Ask:
+
+```text
+What MCP tools are available, and what does each tool do?
+```
+
+3. Review permissions before approving a tool.
+
+### What You Should See
+
+Copilot may list available MCP tools or report that none are configured.
+
+### Verify
+
+Record one tool's purpose and required permission. Do not approve unfamiliar tools.
+
+---
+
+## Lab 27 — Copilot CLI Sessions
+
+### Goal
+
+Use context across a Copilot CLI session.
+
+### Steps
+
+1. Open PowerShell in the repository folder.
+2. Run:
+
+```powershell
+copilot
+```
+
+3. Ask:
+
+```text
+List the Python files in this repository.
+```
+
+4. Ask:
+
+```text
+Summarize the purpose of each file you found.
+```
+
+### What You Should See
+
+The second response should use the first response's context.
+
+### Verify
+
+Compare both responses with the repository.
+
+---
+
+## Lab 28 — Organization Policies
+
+### Goal
+
+Review organization-level Copilot controls.
+
+### Steps
+
+1. On GitHub.com, open the organization's **Settings**.
+2. Open the Copilot policy or feature settings.
+3. Review settings for Chat, Agent Mode, code review, public-code matching, and content exclusions.
+4. Review available audit log events.
+
+### What You Should See
+
+Policies can control which Copilot features members can use. Settings depend on the plan and your permissions.
+
+### Verify
+
+Record one policy and the feature it controls. Do not change a production setting.
