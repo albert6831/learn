@@ -162,6 +162,8 @@ The GitHub Copilot and GitHub Copilot Chat extensions provide the VS Code editor
 
 ---
 
+### Domain 1 — Use GitHub Copilot Responsibly
+
 ## Lab 1.1 — Hallucination Detection
 
 ### Goal
@@ -305,6 +307,8 @@ Explain best practices for securing authentication systems.
 Copilot should provide defensive guidance such as strong password storage, multi-factor authentication, secure session handling, rate limiting, and logging.
 
 ---
+
+### Domain 2 — Use GitHub Copilot Features
 
 ## Lab 2.1 — Copilot Chat Debugging
 
@@ -579,6 +583,8 @@ Check one comment against the code. Do not approve or merge based only on Copilo
 
 ---
 
+### Domain 5 — Improve Developer Productivity
+
 ## Lab 5.1 — Generate Unit Tests
 
 ### Goal
@@ -695,6 +701,8 @@ Copilot CLI should ask for project context or propose an initial README from the
 
 ---
 
+### Domain 3 — Understand Copilot Data and Architecture
+
 ## Lab 3.1 — Suggestion Lifecycle Diagram
 
 ### Goal
@@ -772,6 +780,8 @@ Summarize in 500-token chunks.
 Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing details.
 
 ---
+
+### Domain 4 — Apply Prompt Engineering and Context Crafting
 
 ## Lab 4.1 — Zero-Shot Prompting
 
@@ -952,6 +962,8 @@ Explain why this violates content exclusions.
 Copilot should describe that ransomware would facilitate data encryption, extortion, or unauthorized disruption, so generating it is excluded. The explanation should remain high level and defensive.
 
 ---
+
+### Domain 6 — Configure Privacy, Content Exclusions, and Safeguards
 
 ## Lab 6.1 — Enterprise Safeguards
 
