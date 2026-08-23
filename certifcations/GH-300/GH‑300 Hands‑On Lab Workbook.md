@@ -15,49 +15,49 @@
 
 ### Use GitHub Copilot Responsibly
 
-- [Lab 1 — Hallucination Detection](#lab-1--hallucination-detection)
-- [Lab 2 — Bias Detection](#lab-2--bias-detection)
-- [Lab 3 — Dual-Use Prompt Safety](#lab-3--dual-use-prompt-safety)
-- [Lab 17 — Sensitive Data Protection](#lab-17--sensitive-data-protection)
-- [Lab 18 — Content Exclusion Testing](#lab-18--content-exclusion-testing)
-- [Lab 23 — Sensitive Prompt Handling](#lab-23--sensitive-prompt-handling)
+- [Lab 1.1 — Hallucination Detection](#lab-11--hallucination-detection)
+- [Lab 1.2 — Bias Detection](#lab-12--bias-detection)
+- [Lab 1.3 — Dual-Use Prompt Safety](#lab-13--dual-use-prompt-safety)
+- [Lab 1.4 — Sensitive Data Protection](#lab-14--sensitive-data-protection)
+- [Lab 1.5 — Content Exclusion Testing](#lab-15--content-exclusion-testing)
+- [Lab 1.6 — Sensitive Prompt Handling](#lab-16--sensitive-prompt-handling)
 
 ### Use GitHub Copilot Features
 
-- [Lab 4 — Copilot Chat Debugging](#lab-4--copilot-chat-debugging)
-- [Lab 5 — Copilot Edits Refactoring](#lab-5--copilot-edits-refactoring)
-- [Lab 6 — Copilot CLI Documentation](#lab-6--copilot-cli-documentation)
-- [Lab 7 — Agent Mode Workflow](#lab-7--agent-mode-workflow)
-- [Lab 8 — PR Summaries](#lab-8--pr-summaries)
-- [Lab 20 — Inline Completion Review](#lab-20--inline-completion-review)
-- [Lab 24 — Agent Sessions and Sub-agents](#lab-24--agent-sessions-and-sub-agents)
-- [Lab 25 — Custom Agents and Instructions](#lab-25--custom-agents-and-instructions)
-- [Lab 26 — MCP and External Tools](#lab-26--mcp-and-external-tools)
-- [Lab 27 — Copilot CLI Sessions](#lab-27--copilot-cli-sessions)
+- [Lab 2.1 — Copilot Chat Debugging](#lab-21--copilot-chat-debugging)
+- [Lab 2.2 — Copilot Edits Refactoring](#lab-22--copilot-edits-refactoring)
+- [Lab 2.3 — Copilot CLI Documentation](#lab-23--copilot-cli-documentation)
+- [Lab 2.4 — Agent Mode Workflow](#lab-24--agent-mode-workflow)
+- [Lab 2.5 — PR Summaries](#lab-25--pr-summaries)
+- [Lab 2.6 — Inline Completion Review](#lab-26--inline-completion-review)
+- [Lab 2.7 — Agent Sessions and Sub-agents](#lab-27--agent-sessions-and-sub-agents)
+- [Lab 2.8 — Custom Agents and Instructions](#lab-28--custom-agents-and-instructions)
+- [Lab 2.9 — MCP and External Tools](#lab-29--mcp-and-external-tools)
+- [Lab 2.10 — Copilot CLI Sessions](#lab-210--copilot-cli-sessions)
 
 ### Understand Copilot Data and Architecture
 
-- [Lab 12 — Suggestion Lifecycle Diagram](#lab-12--suggestion-lifecycle-diagram)
-- [Lab 13 — Token Limit Awareness](#lab-13--token-limit-awareness)
+- [Lab 3.1 — Suggestion Lifecycle Diagram](#lab-31--suggestion-lifecycle-diagram)
+- [Lab 3.2 — Token Limit Awareness](#lab-32--token-limit-awareness)
 
 ### Apply Prompt Engineering and Context Crafting
 
-- [Lab 14 — Zero-Shot Prompting](#lab-14--zero-shot-prompting)
-- [Lab 15 — Few-Shot Prompting](#lab-15--few-shot-prompting)
-- [Lab 16 — Prompt Refinement](#lab-16--prompt-refinement)
-- [Lab 21 — Workspace Context Grounding](#lab-21--workspace-context-grounding)
+- [Lab 4.1 — Zero-Shot Prompting](#lab-41--zero-shot-prompting)
+- [Lab 4.2 — Few-Shot Prompting](#lab-42--few-shot-prompting)
+- [Lab 4.3 — Prompt Refinement](#lab-43--prompt-refinement)
+- [Lab 4.4 — Workspace Context Grounding](#lab-44--workspace-context-grounding)
 
 ### Improve Developer Productivity
 
-- [Lab 9 — Generate Unit Tests](#lab-9--generate-unit-tests)
-- [Lab 10 — Refactor Legacy Code](#lab-10--refactor-legacy-code)
-- [Lab 11 — Generate Documentation](#lab-11--generate-documentation)
-- [Lab 22 — Verification Before Acceptance](#lab-22--verification-before-acceptance)
+- [Lab 5.1 — Generate Unit Tests](#lab-51--generate-unit-tests)
+- [Lab 5.2 — Refactor Legacy Code](#lab-52--refactor-legacy-code)
+- [Lab 5.3 — Generate Documentation](#lab-53--generate-documentation)
+- [Lab 5.4 — Verification Before Acceptance](#lab-54--verification-before-acceptance)
 
 ### Configure Privacy, Content Exclusions, and Safeguards
 
-- [Lab 19 — Enterprise Safeguards](#lab-19--enterprise-safeguards)
-- [Lab 28 — Organization Policies](#lab-28--organization-policies)
+- [Lab 6.1 — Enterprise Safeguards](#lab-61--enterprise-safeguards)
+- [Lab 6.2 — Organization Policies](#lab-62--organization-policies)
 
 </details>
 
@@ -162,7 +162,7 @@ The GitHub Copilot and GitHub Copilot Chat extensions provide the VS Code editor
 
 ---
 
-## Lab 1 — Hallucination Detection
+## Lab 1.1 — Hallucination Detection
 
 ### Goal
 
@@ -223,7 +223,7 @@ Copilot should walk through the loop and may identify the negative-number edge c
 
 ---
 
-## Lab 2 — Bias Detection
+## Lab 1.2 — Bias Detection
 
 ### Goal
 
@@ -265,7 +265,7 @@ The revised response should focus on observable qualifications and job-related e
 
 ---
 
-## Lab 3 — Dual-Use Prompt Safety
+## Lab 1.3 — Dual-Use Prompt Safety
 
 ### Goal
 
@@ -306,7 +306,7 @@ Copilot should provide defensive guidance such as strong password storage, multi
 
 ---
 
-## Lab 4 — Copilot Chat Debugging
+## Lab 2.1 — Copilot Chat Debugging
 
 ### Goal
 
@@ -363,7 +363,7 @@ Copilot should change the expression to `name.upper()` and explain that calling 
 
 ---
 
-## Lab 5 — Copilot Edits Refactoring
+## Lab 2.2 — Copilot Edits Refactoring
 
 ### Goal
 
@@ -424,7 +424,7 @@ The function should gain type annotations for its parameters and return value, p
 
 ---
 
-## Lab 6 — Copilot CLI Documentation
+## Lab 2.3 — Copilot CLI Documentation
 
 ### Goal
 
@@ -456,7 +456,7 @@ Copilot CLI should propose README content with a project description and likely 
 
 ---
 
-## Lab 7 — Agent Mode Workflow
+## Lab 2.4 — Agent Mode Workflow
 
 ### Goal
 
@@ -497,7 +497,7 @@ The script should be updated with logging around the main workflow, such as read
 
 ---
 
-## Lab 8 — PR Summaries
+## Lab 2.5 — PR Summaries
 
 ### Goal
 
@@ -579,7 +579,7 @@ Check one comment against the code. Do not approve or merge based only on Copilo
 
 ---
 
-## Lab 9 — Generate Unit Tests
+## Lab 5.1 — Generate Unit Tests
 
 ### Goal
 
@@ -621,7 +621,7 @@ Copilot should generate pytest code that imports or calls `add()` and checks exp
 
 ---
 
-## Lab 10 — Refactor Legacy Code
+## Lab 5.2 — Refactor Legacy Code
 
 ### Goal
 
@@ -667,7 +667,7 @@ Copilot Edits should replace the indexed loop with a list comprehension equivale
 
 ---
 
-## Lab 11 — Generate Documentation
+## Lab 5.3 — Generate Documentation
 
 ### Goal
 
@@ -695,7 +695,7 @@ Copilot CLI should ask for project context or propose an initial README from the
 
 ---
 
-## Lab 12 — Suggestion Lifecycle Diagram
+## Lab 3.1 — Suggestion Lifecycle Diagram
 
 ### Goal
 
@@ -722,7 +722,7 @@ Copilot should return a diagram or diagram markup showing a flow from the user's
 
 ---
 
-## Lab 13 — Token Limit Awareness
+## Lab 3.2 — Token Limit Awareness
 
 ### Goal
 
@@ -773,7 +773,7 @@ Copilot should organize the response into successive summaries for roughly 500-t
 
 ---
 
-## Lab 14 — Zero-Shot Prompting
+## Lab 4.1 — Zero-Shot Prompting
 
 ### Goal
 
@@ -800,7 +800,7 @@ Copilot should generate a function, likely with a loop or recurrence, that retur
 
 ---
 
-## Lab 15 — Few-Shot Prompting
+## Lab 4.2 — Few-Shot Prompting
 
 ### Goal
 
@@ -830,7 +830,7 @@ Copilot should produce a third example that follows the structure and style of t
 
 ---
 
-## Lab 16 — Prompt Refinement
+## Lab 4.3 — Prompt Refinement
 
 ### Goal
 
@@ -871,7 +871,7 @@ The refined response should be more specific: it should contain Python code, a r
 
 ---
 
-## Lab 17 — Sensitive Data Protection
+## Lab 1.4 — Sensitive Data Protection
 
 ### Goal
 
@@ -912,7 +912,7 @@ Copilot should explain that exposing credentials can enable unauthorized access 
 
 ---
 
-## Lab 18 — Content Exclusion Testing
+## Lab 1.5 — Content Exclusion Testing
 
 ### Goal
 
@@ -953,7 +953,7 @@ Copilot should describe that ransomware would facilitate data encryption, extort
 
 ---
 
-## Lab 19 — Enterprise Safeguards
+## Lab 6.1 — Enterprise Safeguards
 
 ### Goal
 
@@ -994,7 +994,7 @@ Copilot should explain that audit logs record relevant organizational events so 
 
 ---
 
-## Lab 20 — Inline Completion Review
+## Lab 2.6 — Inline Completion Review
 
 ### Goal
 
@@ -1035,7 +1035,7 @@ You should be able to compare how Copilot behaves when accepted versus rejected.
 
 ---
 
-## Lab 21 — Workspace Context Grounding
+## Lab 4.4 — Workspace Context Grounding
 
 ### Goal
 
@@ -1090,7 +1090,7 @@ The answer should stay limited to the selected code instead of referring to unre
 
 ---
 
-## Lab 22 — Verification Before Acceptance
+## Lab 5.4 — Verification Before Acceptance
 
 ### Goal
 
@@ -1136,7 +1136,7 @@ You should confirm whether the tests pass and whether the generated implementati
 
 ---
 
-## Lab 23 — Sensitive Prompt Handling
+## Lab 1.6 — Sensitive Prompt Handling
 
 ### Goal
 
@@ -1177,7 +1177,7 @@ Copilot should rewrite the example in a safer way and avoid echoing or storing t
 
 ---
 
-## Lab 24 — Agent Sessions and Sub-agents
+## Lab 2.7 — Agent Sessions and Sub-agents
 
 ### Goal
 
@@ -1205,7 +1205,7 @@ Check that the result matches the files inspected.
 
 ---
 
-## Lab 25 — Custom Agents and Instructions
+## Lab 2.8 — Custom Agents and Instructions
 
 ### Goal
 
@@ -1238,7 +1238,7 @@ Check that the response is concise and mentions bugs or tests.
 
 ---
 
-## Lab 26 — MCP and External Tools
+## Lab 2.9 — MCP and External Tools
 
 ### Goal
 
@@ -1265,7 +1265,7 @@ Record one tool's purpose and required permission. Do not approve unfamiliar too
 
 ---
 
-## Lab 27 — Copilot CLI Sessions
+## Lab 2.10 — Copilot CLI Sessions
 
 ### Goal
 
@@ -1302,7 +1302,7 @@ Compare both responses with the repository.
 
 ---
 
-## Lab 28 — Organization Policies
+## Lab 6.2 — Organization Policies
 
 ### Goal
 
