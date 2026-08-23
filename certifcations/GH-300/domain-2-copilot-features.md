@@ -21,7 +21,7 @@
 
 Debug code using Copilot Chat.
 
-### Context
+### What This Is
 
 Copilot Chat can help locate the difference between a value and a callable method, explain the resulting error, and suggest a correction. This lab gives you a small reproducible bug so you can compare the explanation with the source code.
 
@@ -78,7 +78,7 @@ Copilot should change the expression to `name.upper()` and explain that calling 
 
 Refactor code using Copilot Edits.
 
-### Context
+### What This Is
 
 Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation.
 
@@ -139,7 +139,7 @@ The function should gain type annotations for its parameters and return value, p
 
 Generate a README using Copilot CLI.
 
-### Context
+### What This Is
 
 Good documentation explains what a project does, how to use it, and what users need before they begin. This lab introduces Copilot CLI as a terminal-based way to turn a short project description into repository documentation.
 
@@ -171,7 +171,7 @@ Copilot CLI should propose README content with a project description and likely 
 
 Use Agent Mode for multi-step automation.
 
-### Context
+### What This Is
 
 Agent Mode is intended for tasks that involve several related actions, such as creating files, implementing logic, and improving the result. This lab lets you observe how Copilot handles a multi-step request.
 
@@ -212,7 +212,7 @@ The script should be updated with logging around the main workflow, such as read
 
 Use Copilot to summarize pull requests.
 
-### Context
+### What This Is
 
 A pull request can contain a lot of information. Use Copilot to review the code.
 
@@ -288,17 +288,15 @@ Check one comment against the code. Do not approve or merge based only on Copilo
 
 ---
 
-### Domain 5 — Improve Developer Productivity
-
 ## Lab 2.6 — Inline Completion Review
 
 ### Goal
 
 Practice accepting, rejecting, and editing inline completions.
 
-### Context
+### What This Is
 
-Inline completions can be fast, but they still need review. This lab compares an editor suggestion with the code you intended to write so you can spot when a completion is useful or when it introduces a wrong assumption.
+Inline completion is code that Copilot suggests as you type in the editor. Accept it with Tab, reject it by continuing to type, or ignore it. It can be useful, but it still needs review for correctness and unintended assumptions.
 
 ### Steps
 
@@ -337,6 +335,10 @@ You should be able to compare how Copilot behaves when accepted versus rejected.
 
 Use Agent Mode for a multi-step task.
 
+### What This Is
+
+An agent session is a task conversation that can plan work, use tools, and keep results in context. A sub-agent is a helper that handles a focused part of the task.
+
 ### Steps
 
 1. Open Copilot Chat in VS Code.
@@ -364,6 +366,10 @@ Check that the result matches the files inspected.
 ### Goal
 
 Customize Copilot's behavior.
+
+### What This Is
+
+Custom agents use a profile file to define their name, purpose, and instructions. Repository instructions provide shared guidance for Copilot responses.
 
 ### Steps
 
@@ -398,6 +404,10 @@ Check that the response is concise and mentions bugs or tests.
 
 Understand MCP tool access.
 
+### What This Is
+
+MCP, or Model Context Protocol, lets Copilot connect to external tools and services. Each tool may require permissions, so review access before approving it.
+
 ### Steps
 
 1. Open Copilot Chat.
@@ -424,6 +434,10 @@ Record one tool's purpose and required permission. Do not approve unfamiliar too
 ### Goal
 
 Use context across a Copilot CLI session.
+
+### What This Is
+
+A Copilot CLI session keeps related requests together so follow-up prompts can use earlier context and results.
 
 ### Steps
 

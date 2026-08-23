@@ -13,7 +13,7 @@
 
 Understand Copilot's architecture.
 
-### Context
+### What This Is
 
 Understanding the path from a prompt to a suggestion makes it easier to reason about context, filtering, and model output. This lab asks Copilot to represent that process visually, helping you identify the main stages of a response.
 
@@ -40,7 +40,7 @@ Copilot should return a diagram or diagram markup showing a flow from the user's
 
 Understand context windows.
 
-### Context
+### What This Is
 
 AI tools have limits on how much text they can process in one request. This lab demonstrates why long inputs may need to be summarized in smaller chunks and gives you a way to compare a broad summary with chunked summaries.
 

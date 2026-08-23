@@ -17,7 +17,7 @@
 
 Identify incorrect AI answers.
 
-### Context
+### What This Is
 
 Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small Python function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
 
@@ -78,7 +78,7 @@ Copilot should walk through the loop and may identify the negative-number edge c
 
 Identify biased outputs.
 
-### Context
+### What This Is
 
 AI systems can make assumptions about people when a prompt contains incomplete information. This lab demonstrates how to recognize those assumptions and refine an answer so it focuses on relevant qualifications only.
 
@@ -120,7 +120,7 @@ The revised response should focus on observable qualifications and job-related e
 
 Understand Copilot's safety filters.
 
-### Context
+### What This Is
 
 Some requests can be used for legitimate security research but can also enable unauthorized access. This lab contrasts a harmful request with a defensive alternative so you can recognize how to ask safe, authorized questions.
 
@@ -163,7 +163,7 @@ Copilot should provide defensive guidance such as strong password storage, multi
 
 Understand privacy safeguards.
 
-### Context
+### What This Is
 
 Credentials and other sensitive values should not be placed in source code or shared unnecessarily with AI tools. This lab uses an intentionally unsafe example to explore how Copilot responds and how to rewrite the request safely.
 
@@ -204,7 +204,7 @@ Copilot should explain that exposing credentials can enable unauthorized access 
 
 Trigger safety filters.
 
-### Context
+### What This Is
 
 Requests to create malware can directly facilitate harm, so AI assistants may refuse them or redirect toward defensive material. This lab helps you recognize that boundary and understand how to continue safely.
 
@@ -247,7 +247,7 @@ Copilot should describe that ransomware would facilitate data encryption, extort
 
 Rewrite a request that includes private data into a safer version.
 
-### Context
+### What This Is
 
 A common Copilot mistake is to paste private values, tokens, or customer information into a prompt. This lab practices replacing the sensitive parts with placeholders while keeping the task useful.
 

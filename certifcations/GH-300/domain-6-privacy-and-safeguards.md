@@ -13,7 +13,7 @@
 
 Understand enterprise controls.
 
-### Context
+### What This Is
 
 Organizations need safeguards that support secure adoption of AI-assisted development at scale. This lab introduces duplication detection and audit logging as examples of controls that help organizations review activity.
 
@@ -53,6 +53,10 @@ Copilot should explain that audit logs record relevant organizational events so 
 ### Goal
 
 Review organization-level Copilot controls.
+
+### What This Is
+
+Organization policies control which Copilot features members can use and how administrators manage privacy, security, and audit requirements.
 
 ### Steps
 

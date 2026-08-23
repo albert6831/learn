@@ -15,7 +15,7 @@
 
 Generate tests using Copilot Chat.
 
-### Context
+### What This Is
 
 Tests document expected behavior and help catch regressions when code changes. This lab uses a simple function so you can evaluate whether Copilot generates useful pytest cases, including normal and edge cases.
 
@@ -57,7 +57,7 @@ Copilot should generate pytest code that imports or calls `add()` and checks exp
 
 Modernize old code.
 
-### Context
+### What This Is
 
 Legacy code may be correct but unnecessarily verbose or difficult to maintain. This lab practices using Copilot to express a loop with a list comprehension while checking that the refactoring preserves behavior.
 
@@ -103,7 +103,7 @@ Copilot Edits should replace the indexed loop with a list comprehension equivale
 
 Generate documentation using Copilot CLI.
 
-### Context
+### What This Is
 
 Documentation generation is useful when a project has code but lacks a clear entry point for users or contributors. This lab revisits README generation from the command line so you can assess the quality of the output after Copilot inspects the repository.
 
@@ -133,7 +133,7 @@ Copilot CLI should ask for project context or propose an initial README from the
 
 Practice checking generated code before using it.
 
-### Context
+### What This Is
 
 Copilot can suggest code that looks correct but still fails tests or misses edge cases. This lab focuses on the habit of verifying generated output with a test run or by reading the diff carefully.
 

@@ -15,7 +15,7 @@
 
 Write prompts without examples.
 
-### Context
+### What This Is
 
 Zero-shot prompting asks the model to complete a task using only the instructions provided. This lab establishes a baseline for judging how much detail Copilot can infer when no example output or format is supplied.
 
@@ -42,7 +42,7 @@ Copilot should generate a function, likely with a loop or recurrence, that retur
 
 Guide Copilot with examples.
 
-### Context
+### What This Is
 
 Few-shot prompting provides examples that communicate the expected structure, style, or level of detail. This lab shows how examples can guide Copilot toward a more consistent result than a request without examples.
 
@@ -72,7 +72,7 @@ Copilot should produce a third example that follows the structure and style of t
 
 Improve bad prompts.
 
-### Context
+### What This Is
 
 Vague prompts leave important requirements open to interpretation, which often produces incomplete code. This lab compares a minimal request with a refined prompt that specifies the language, validation logic, and expected behavior.
 
@@ -113,7 +113,7 @@ The refined response should be more specific: it should contain Python code, a r
 
 Check whether Copilot uses the current file and workspace correctly.
 
-### Context
+### What This Is
 
 Copilot should use the files in your workspace as context when you ask it to modify code. This lab helps you verify that it grounds its answer in the actual repository instead of inventing details.
 
