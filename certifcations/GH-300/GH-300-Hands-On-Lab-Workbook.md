@@ -9,9 +9,6 @@
 > **Study tip**
 > Choose a domain below, complete its labs, and verify each result before moving on.
 
-<details>
-<summary><strong>Open the lab index</strong></summary>
-
 ## Table of Contents
 
 - [Study by Exam Domain](#study-by-exam-domain)
@@ -23,8 +20,6 @@
 - [Domain 4 — Apply Prompt Engineering and Context Crafting](domain-4-prompt-engineering.md)
 - [Domain 5 — Improve Developer Productivity](domain-5-developer-productivity.md)
 - [Domain 6 — Configure Privacy, Content Exclusions, and Safeguards](domain-6-privacy-and-safeguards.md)
-
-</details>
 
 ## Study by Exam Domain
 
