@@ -2,6 +2,15 @@
 
 **Exam weight:** 15–20%
 
+## Lab Index
+
+- [Lab 1.1 — Hallucination Detection](#lab-11--hallucination-detection)
+- [Lab 1.2 — Bias Detection](#lab-12--bias-detection)
+- [Lab 1.3 — Dual-Use Prompt Safety](#lab-13--dual-use-prompt-safety)
+- [Lab 1.4 — Sensitive Data Protection](#lab-14--sensitive-data-protection)
+- [Lab 1.5 — Content Exclusion Testing](#lab-15--content-exclusion-testing)
+- [Lab 1.6 — Sensitive Prompt Handling](#lab-16--sensitive-prompt-handling)
+
 ## Lab 1.1 — Hallucination Detection
 
 ### Goal

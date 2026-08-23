@@ -2,6 +2,11 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 6.1 — Enterprise Safeguards](#lab-61--enterprise-safeguards)
+- [Lab 6.2 — Organization Policies](#lab-62--organization-policies)
+
 ## Lab 6.1 — Enterprise Safeguards
 
 ### Goal

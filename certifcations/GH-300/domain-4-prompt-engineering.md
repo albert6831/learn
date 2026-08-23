@@ -2,6 +2,13 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 4.1 — Zero-Shot Prompting](#lab-41--zero-shot-prompting)
+- [Lab 4.2 — Few-Shot Prompting](#lab-42--few-shot-prompting)
+- [Lab 4.3 — Prompt Refinement](#lab-43--prompt-refinement)
+- [Lab 4.4 — Workspace Context Grounding](#lab-44--workspace-context-grounding)
+
 ## Lab 4.1 — Zero-Shot Prompting
 
 ### Goal

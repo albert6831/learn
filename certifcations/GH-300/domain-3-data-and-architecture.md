@@ -2,6 +2,11 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 3.1 — Suggestion Lifecycle Diagram](#lab-31--suggestion-lifecycle-diagram)
+- [Lab 3.2 — Token Limit Awareness](#lab-32--token-limit-awareness)
+
 ## Lab 3.1 — Suggestion Lifecycle Diagram
 
 ### Goal

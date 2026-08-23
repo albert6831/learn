@@ -2,6 +2,13 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 5.1 — Generate Unit Tests](#lab-51--generate-unit-tests)
+- [Lab 5.2 — Refactor Legacy Code](#lab-52--refactor-legacy-code)
+- [Lab 5.3 — Generate Documentation](#lab-53--generate-documentation)
+- [Lab 5.4 — Verification Before Acceptance](#lab-54--verification-before-acceptance)
+
 ## Lab 5.1 — Generate Unit Tests
 
 ### Goal

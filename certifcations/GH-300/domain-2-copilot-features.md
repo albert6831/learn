@@ -2,6 +2,19 @@
 
 **Exam weight:** 25–30%
 
+## Lab Index
+
+- [Lab 2.1 — Copilot Chat Debugging](#lab-21--copilot-chat-debugging)
+- [Lab 2.2 — Copilot Edits Refactoring](#lab-22--copilot-edits-refactoring)
+- [Lab 2.3 — Copilot CLI Documentation](#lab-23--copilot-cli-documentation)
+- [Lab 2.4 — Agent Mode Workflow](#lab-24--agent-mode-workflow)
+- [Lab 2.5 — PR Summaries](#lab-25--pr-summaries)
+- [Lab 2.6 — Inline Completion Review](#lab-26--inline-completion-review)
+- [Lab 2.7 — Agent Sessions and Sub-agents](#lab-27--agent-sessions-and-sub-agents)
+- [Lab 2.8 — Custom Agents and Instructions](#lab-28--custom-agents-and-instructions)
+- [Lab 2.9 — MCP and External Tools](#lab-29--mcp-and-external-tools)
+- [Lab 2.10 — Copilot CLI Sessions](#lab-210--copilot-cli-sessions)
+
 ## Lab 2.1 — Copilot Chat Debugging
 
 ### Goal
