@@ -66,14 +66,14 @@
 
 ## Study by Exam Domain
 
-| Domain | Focus | Labs |
+| Domain | Focus | Exam weight |
 | --- | --- | --- |
-| 1 | Responsible use | 1.1–1.6 |
-| 2 | Copilot features | 2.1–2.10 |
-| 3 | Data and architecture | 3.1–3.2 |
-| 4 | Prompt engineering and context | 4.1–4.4 |
-| 5 | Developer productivity | 5.1–5.4 |
-| 6 | Privacy and safeguards | 6.1–6.2 |
+| 1 | Responsible use | 15–20% |
+| 2 | Copilot features | 25–30% |
+| 3 | Data and architecture | 10–15% |
+| 4 | Prompt engineering and context | 10–15% |
+| 5 | Developer productivity | 10–15% |
+| 6 | Privacy and safeguards | 10–15% |
 
 ## Section 0 — Requirements & Setup
 
