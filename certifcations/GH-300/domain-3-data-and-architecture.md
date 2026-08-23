@@ -2,9 +2,82 @@
 
 **Exam weight:** 10–15%
 
-Focus on context windows, prompt processing, and the suggestion lifecycle.
+## Lab 3.1 — Suggestion Lifecycle Diagram
 
-## Labs
+### Goal
 
-- [Lab 3.1 — Suggestion Lifecycle Diagram](GH-300-Hands-On-Lab-Workbook.md#lab-31--suggestion-lifecycle-diagram)
-- [Lab 3.2 — Token Limit Awareness](GH-300-Hands-On-Lab-Workbook.md#lab-32--token-limit-awareness)
+Understand Copilot's architecture.
+
+### Context
+
+Understanding the path from a prompt to a suggestion makes it easier to reason about context, filtering, and model output. This lab asks Copilot to represent that process visually, helping you identify the main stages of a response.
+
+### Ask Copilot Chat
+
+1. Open Copilot Chat
+2. Type:
+
+```text
+Draw a diagram of how GitHub Copilot processes a prompt from input to output.
+```
+
+3. Press Enter
+
+### What You Should See
+
+Copilot should return a diagram or diagram markup showing a flow from the user's prompt through context gathering and model processing to a suggestion or response. Treat the diagram as a high-level explanation, not an implementation detail.
+
+---
+
+## Lab 3.2 — Token Limit Awareness
+
+### Goal
+
+Understand context windows.
+
+### Context
+
+AI tools have limits on how much text they can process in one request. This lab demonstrates why long inputs may need to be summarized in smaller chunks and gives you a way to compare a broad summary with chunked summaries.
+
+### Steps
+
+1. Create:
+
+```text
+longprompt.txt
+```
+
+2. Paste several pages of text
+
+### Ask Copilot Chat
+
+1. Open Copilot Chat
+2. Type:
+
+```text
+Summarize this text.
+```
+
+3. Press Enter
+
+### What You Should See
+
+Copilot should return a shorter summary that captures the main ideas of the text. If the input is too large, it may warn about context limits, omit details, or ask you to provide less text.
+
+### Chunk Summary
+
+1. Type:
+
+```text
+Summarize in 500-token chunks.
+```
+
+2. Press Enter
+
+### What You Should See
+
+Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing details.
+
+---
+
+### Domain 4 — Apply Prompt Engineering and Context Crafting
