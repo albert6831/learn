@@ -6,6 +6,9 @@
 > **Recommended rhythm**
 > **Prepare** the code or workspace → **Ask** Copilot → **Review** the response or proposed change → **Verify** it against the source, diff, or tests.
 
+> **Study tip**
+> Choose a domain below, complete its labs, and verify each result before moving on.
+
 <details>
 <summary><strong>Open the lab index</strong></summary>
 
@@ -60,6 +63,17 @@
 - [Lab 6.2 — Organization Policies](#lab-62--organization-policies)
 
 </details>
+
+## Study by Exam Domain
+
+| Domain | Focus | Labs |
+| --- | --- | --- |
+| 1 | Responsible use | 1.1–1.6 |
+| 2 | Copilot features | 2.1–2.10 |
+| 3 | Data and architecture | 3.1–3.2 |
+| 4 | Prompt engineering and context | 4.1–4.4 |
+| 5 | Developer productivity | 5.1–5.4 |
+| 6 | Privacy and safeguards | 6.1–6.2 |
 
 ## Section 0 — Requirements & Setup
 
