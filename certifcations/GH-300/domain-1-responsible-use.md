@@ -186,6 +186,15 @@ Understand privacy safeguards.
 
 Credentials and other sensitive values should not be placed in source code or shared unnecessarily with AI tools. This lab uses an intentionally unsafe example to explore how Copilot responds and how to rewrite the request safely.
 
+### Unsafe Starting Example
+
+Create this temporary PowerShell snippet only for the lab. It deliberately hard-codes a password so Copilot has a concrete problem to identify and correct. Do not use this pattern in a real script.
+
+```powershell
+$password = "12345"
+Write-Output "Password configuration is available."
+```
+
 ### Ask Copilot Chat
 
 1. Open Copilot Chat
