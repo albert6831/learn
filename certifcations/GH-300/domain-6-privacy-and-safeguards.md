@@ -2,13 +2,18 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 6.1 — Enterprise Safeguards](#lab-61--enterprise-safeguards)
+- [Lab 6.2 — Organization Policies](#lab-62--organization-policies)
+
 ## Lab 6.1 — Enterprise Safeguards
 
 ### Goal
 
 Understand enterprise controls.
 
-### Context
+### What This Is
 
 Organizations need safeguards that support secure adoption of AI-assisted development at scale. This lab introduces duplication detection and audit logging as examples of controls that help organizations review activity.
 
@@ -41,6 +46,11 @@ Explain how audit logging works.
 
 Copilot should explain that audit logs record relevant organizational events so administrators can review activity, investigate issues, and support compliance. The exact events and retention depend on the environment.
 
+### What You Should Have Learned
+
+- Duplication detection and audit logs are organizational safeguards for responsible AI adoption.
+- Treat product-control details as environment- and policy-dependent.
+
 ---
 
 ## Lab 6.2 — Organization Policies
@@ -48,6 +58,10 @@ Copilot should explain that audit logs record relevant organizational events so 
 ### Goal
 
 Review organization-level Copilot controls.
+
+### What This Is
+
+Organization policies control which Copilot features members can use and how administrators manage privacy, security, and audit requirements.
 
 ### Steps
 
@@ -63,3 +77,8 @@ Policies can control which Copilot features members can use. Settings depend on 
 ### Verify
 
 Record one policy and the feature it controls. Do not change a production setting.
+
+### What You Should Have Learned
+
+- Organization policies govern available Copilot features and related privacy or security controls.
+- Review and document settings carefully before changing production configuration.

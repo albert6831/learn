@@ -2,13 +2,26 @@
 
 **Exam weight:** 25–30%
 
+## Lab Index
+
+- [Lab 2.1 — Copilot Chat Debugging](#lab-21--copilot-chat-debugging)
+- [Lab 2.2 — Copilot Edits Refactoring](#lab-22--copilot-edits-refactoring)
+- [Lab 2.3 — Copilot CLI Documentation](#lab-23--copilot-cli-documentation)
+- [Lab 2.4 — Agent Mode Workflow](#lab-24--agent-mode-workflow)
+- [Lab 2.5 — PR Summaries](#lab-25--pr-summaries)
+- [Lab 2.6 — Inline Completion Review](#lab-26--inline-completion-review)
+- [Lab 2.7 — Agent Sessions and Sub-agents](#lab-27--agent-sessions-and-sub-agents)
+- [Lab 2.8 — Custom Agents and Instructions](#lab-28--custom-agents-and-instructions)
+- [Lab 2.9 — MCP and External Tools](#lab-29--mcp-and-external-tools)
+- [Lab 2.10 — Copilot CLI Sessions](#lab-210--copilot-cli-sessions)
+
 ## Lab 2.1 — Copilot Chat Debugging
 
 ### Goal
 
 Debug code using Copilot Chat.
 
-### Context
+### What This Is
 
 Copilot Chat can help locate the difference between a value and a callable method, explain the resulting error, and suggest a correction. This lab gives you a small reproducible bug so you can compare the explanation with the source code.
 
@@ -17,14 +30,18 @@ Copilot Chat can help locate the difference between a value and a callable metho
 1. Create:
 
 ```text
-bug.py
+bug.ps1
 ```
 
 2. Paste:
 
-```python
-def greet(name):
-    return "Hello " + name.upper
+```powershell
+function Get-Greeting {
+    param([string]$Name)
+
+    $upperName = $Name.ToUpper
+    return "Hello " + $upperName.Trim()
+}
 ```
 
 ### Ask Copilot Chat
@@ -34,14 +51,14 @@ def greet(name):
 3. Type:
 
 ```text
-Why does this function fail when I call greet('Alberto')?
+Why does this function fail when I call Get-Greeting -Name 'Alberto'?
 ```
 
 4. Press Enter
 
 ### What You Should See
 
-Copilot should point out that `name.upper` is a method object and needs parentheses. Calling `greet('Alberto')` should therefore fail when Python tries to concatenate the string with that method object.
+Copilot should point out that `$Name.ToUpper` refers to a method and needs parentheses. Calling `Get-Greeting -Name 'Alberto'` should therefore fail when the script tries to call `Trim()` on that method object.
 
 ### Fix
 
@@ -55,7 +72,12 @@ Fix this function.
 
 ### What You Should See
 
-Copilot should change the expression to `name.upper()` and explain that calling the method returns the uppercase string `ALBERTO`.
+Copilot should change the expression to `$Name.ToUpper()` and explain that calling the method returns the uppercase string `ALBERTO`.
+
+### What You Should Have Learned
+
+- Use Copilot Chat to explain a reproducible bug, then confirm the explanation in the source.
+- Distinguish a method reference from the value returned by invoking that method.
 
 ---
 
@@ -65,7 +87,7 @@ Copilot should change the expression to `name.upper()` and explain that calling 
 
 Refactor code using Copilot Edits.
 
-### Context
+### What This Is
 
 Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation.
 
@@ -74,15 +96,21 @@ Refactoring improves readability and maintainability without changing intended b
 1. Create:
 
 ```text
-refactor.py
+refactor.ps1
 ```
 
 2. Paste:
 
-```python
-def add(a,b):
-    c=a+b
-    return c
+```powershell
+function Add-Numbers {
+    param(
+        [int]$First,
+        [int]$Second
+    )
+
+    $sum = $First + $Second
+    return $sum
+}
 ```
 
 ### Ask Copilot Edits
@@ -100,23 +128,28 @@ Refactor this code to be more concise.
 
 ### What You Should See
 
-Copilot Edits should propose a shorter implementation, such as returning `a + b` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review.
+Copilot Edits should propose a shorter implementation, such as returning `$First + $Second` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review.
 
-### Add Type Hints
+### Add Help
 
 1. Highlight the refactored function
 2. Press Ctrl+I
 3. Type:
 
 ```text
-Add type hints and a docstring.
+Add comment-based help that documents the parameters and return value.
 ```
 
 4. Press Enter
 
 ### What You Should See
 
-The function should gain type annotations for its parameters and return value, plus a docstring describing the addition operation. Review the inferred types before accepting the edit.
+The function should gain comment-based help describing the addition operation, its parameters, and its output. Review the help text before accepting the edit.
+
+### What You Should Have Learned
+
+- Use Copilot Edits for focused refactoring and documentation changes.
+- Confirm that a refactor preserves behavior before accepting it.
 
 ---
 
@@ -126,7 +159,7 @@ The function should gain type annotations for its parameters and return value, p
 
 Generate a README using Copilot CLI.
 
-### Context
+### What This Is
 
 Good documentation explains what a project does, how to use it, and what users need before they begin. This lab introduces Copilot CLI as a terminal-based way to turn a short project description into repository documentation.
 
@@ -143,12 +176,17 @@ copilot
 4. When prompted, enter:
 
 ```text
-Create or update README.md for this repository. Describe a Python tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.
+Create or update README.md for this repository. Describe a PowerShell tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.
 ```
 
 ### What You Should See
 
 Copilot CLI should propose README content with a project description and likely sections such as usage, installation, and examples. Review the proposed changes and approve them only after checking that they match the repository.
+
+### What You Should Have Learned
+
+- Use Copilot CLI to draft documentation from inspected repository context.
+- Reject unsupported commands or claims in generated documentation.
 
 ---
 
@@ -158,7 +196,7 @@ Copilot CLI should propose README content with a project description and likely 
 
 Use Agent Mode for multi-step automation.
 
-### Context
+### What This Is
 
 Agent Mode is intended for tasks that involve several related actions, such as creating files, implementing logic, and improving the result. This lab lets you observe how Copilot handles a multi-step request.
 
@@ -168,14 +206,14 @@ Agent Mode is intended for tasks that involve several related actions, such as c
 2. Type:
 
 ```text
-Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.
+Create a new folder called csv_cleaner, generate a PowerShell script that reads a CSV, cleans missing values, and writes a new file.
 ```
 
 3. Press Enter
 
 ### What You Should See
 
-Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a Python script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes before accepting them.
+Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a PowerShell script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes before accepting them.
 
 ### Add Logging
 
@@ -191,6 +229,11 @@ Add logging to each step.
 
 The script should be updated with logging around the main workflow, such as reading the input, cleaning values, and writing the output. The generated code should use appropriate log levels and remain readable.
 
+### What You Should Have Learned
+
+- Use Agent Mode for connected implementation tasks that span files and steps.
+- Review the plan, generated changes, and operational details such as logging.
+
 ---
 
 ## Lab 2.5 — PR Summaries
@@ -199,7 +242,7 @@ The script should be updated with logging around the main workflow, such as read
 
 Use Copilot to summarize pull requests.
 
-### Context
+### What This Is
 
 A pull request can contain a lot of information. Use Copilot to review the code.
 
@@ -220,29 +263,24 @@ practice-pr-summary
 6. Name the file:
 
 ```text
-clean_orders.py
+clean_orders.ps1
 ```
 
 7. Paste:
 
-```python
-import csv
+```powershell
+param(
+    [string]$InputFile,
+    [string]$OutputFile
+)
 
-
-def clean_orders(input_file, output_file):
-    with open(input_file) as source:
-        reader = csv.DictReader(source)
-        orders = []
-
-        for row in reader:
-            if row["email"]:
-                row["email"] = row["email"].lower()
-                orders.append(row)
-
-    with open(output_file, "w") as target:
-        writer = csv.DictWriter(target, fieldnames=reader.fieldnames)
-        writer.writeheader()
-        writer.writerows(orders)
+Import-Csv -LiteralPath $InputFile |
+    Where-Object { $_.email } |
+    ForEach-Object {
+        $_.email = $_.email.ToLowerInvariant()
+        $_
+    } |
+    Export-Csv -LiteralPath $OutputFile -NoTypeInformation
 ```
 
 8. Under **Commit new file**, select **Commit new file**.
@@ -273,9 +311,12 @@ GitHub only shows **Request** when Copilot code review is available.
 
 Check one comment against the code. Do not approve or merge based only on Copilot's review.
 
----
+### What You Should Have Learned
 
-### Domain 5 — Improve Developer Productivity
+- Request Copilot review to surface potential bugs, security concerns, and test gaps.
+- Validate each review comment against the diff before acting on it.
+
+---
 
 ## Lab 2.6 — Inline Completion Review
 
@@ -283,25 +324,26 @@ Check one comment against the code. Do not approve or merge based only on Copilo
 
 Practice accepting, rejecting, and editing inline completions.
 
-### Context
+### What This Is
 
-Inline completions can be fast, but they still need review. This lab compares an editor suggestion with the code you intended to write so you can spot when a completion is useful or when it introduces a wrong assumption.
+Inline completion is code that Copilot suggests as you type in the editor. Accept it with Tab, reject it by continuing to type, or ignore it. It can be useful, but it still needs review for correctness and unintended assumptions.
 
 ### Steps
 
 1. Create:
 
 ```text
-inline_demo.py
+inline_demo.ps1
 ```
 
 2. Paste:
 
-```python
-def square_list(values):
+```powershell
+function ConvertTo-SquaredList {
+    param([int[]]$Values)
 ```
 
-3. On the next line, begin typing `return [` or `result = []` so Copilot can suggest an inline completion.
+3. On the next line, begin typing `$result = foreach ($value in $Values) {` so Copilot can suggest an inline completion.
 
 ### What You Should See
 
@@ -316,6 +358,11 @@ Copilot may suggest a full implementation inline in the editor.
 
 You should be able to compare how Copilot behaves when accepted versus rejected. A good result is one that matches the intended behavior without extra logic.
 
+### What You Should Have Learned
+
+- Treat inline completions as editable suggestions, not automatic decisions.
+- Compare accepted suggestions with the intended behavior and reject unnecessary code.
+
 ---
 
 ## Lab 2.7 — Agent Sessions and Sub-agents
@@ -323,6 +370,10 @@ You should be able to compare how Copilot behaves when accepted versus rejected.
 ### Goal
 
 Use Agent Mode for a multi-step task.
+
+### What This Is
+
+An agent session is a task conversation that can plan work, use tools, and keep results in context. A sub-agent is a helper that handles a focused part of the task.
 
 ### Steps
 
@@ -344,6 +395,11 @@ The agent may show a plan and delegate work to a sub-agent.
 
 Check that the result matches the files inspected.
 
+### What You Should Have Learned
+
+- Agent sessions retain task context while sub-agents can investigate focused questions.
+- Confirm that the final recommendation is grounded in the files actually inspected.
+
 ---
 
 ## Lab 2.8 — Custom Agents and Instructions
@@ -351,6 +407,10 @@ Check that the result matches the files inspected.
 ### Goal
 
 Customize Copilot's behavior.
+
+### What This Is
+
+Custom agents use a profile file to define their name, purpose, and instructions. Repository instructions provide shared guidance for Copilot responses.
 
 ### Steps
 
@@ -360,14 +420,14 @@ Customize Copilot's behavior.
 ```markdown
 ---
 name: Reviewer
-description: Reviews Python changes briefly.
+description: Reviews PowerShell changes briefly.
 ---
 
-Review Python changes for bugs and missing tests. Be concise.
+Review PowerShell changes for bugs and missing tests. Be concise.
 ```
 
 3. Open Copilot Chat and select the custom agent if it appears.
-4. Ask it to review a Python file.
+4. Ask it to review a PowerShell file.
 
 ### What You Should See
 
@@ -377,6 +437,11 @@ The agent should follow the profile instructions. Custom agents may be unavailab
 
 Check that the response is concise and mentions bugs or tests.
 
+### What You Should Have Learned
+
+- Custom-agent profiles and repository instructions shape Copilot's behavior.
+- Verify that an agent follows its stated scope and review criteria.
+
 ---
 
 ## Lab 2.9 — MCP and External Tools
@@ -384,6 +449,10 @@ Check that the response is concise and mentions bugs or tests.
 ### Goal
 
 Understand MCP tool access.
+
+### What This Is
+
+MCP, or Model Context Protocol, lets Copilot connect to external tools and services. Each tool may require permissions, so review access before approving it.
 
 ### Steps
 
@@ -404,6 +473,11 @@ Copilot may list available MCP tools or report that none are configured.
 
 Record one tool's purpose and required permission. Do not approve unfamiliar tools.
 
+### What You Should Have Learned
+
+- MCP tools extend Copilot with external capabilities that require deliberate permission review.
+- Understand a tool's purpose and access before approving it.
+
 ---
 
 ## Lab 2.10 — Copilot CLI Sessions
@@ -411,6 +485,10 @@ Record one tool's purpose and required permission. Do not approve unfamiliar too
 ### Goal
 
 Use context across a Copilot CLI session.
+
+### What This Is
+
+A Copilot CLI session keeps related requests together so follow-up prompts can use earlier context and results.
 
 ### Steps
 
@@ -424,7 +502,7 @@ copilot
 3. Ask:
 
 ```text
-List the Python files in this repository.
+List the PowerShell files in this repository.
 ```
 
 4. Ask:
@@ -440,5 +518,10 @@ The second response should use the first response's context.
 ### Verify
 
 Compare both responses with the repository.
+
+### What You Should Have Learned
+
+- Copilot CLI can retain useful context across related prompts in one session.
+- Check session-grounded responses against the repository for completeness and accuracy.
 
 ---

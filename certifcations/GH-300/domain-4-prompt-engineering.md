@@ -2,13 +2,20 @@
 
 **Exam weight:** 10–15%
 
+## Lab Index
+
+- [Lab 4.1 — Zero-Shot Prompting](#lab-41--zero-shot-prompting)
+- [Lab 4.2 — Few-Shot Prompting](#lab-42--few-shot-prompting)
+- [Lab 4.3 — Prompt Refinement](#lab-43--prompt-refinement)
+- [Lab 4.4 — Workspace Context Grounding](#lab-44--workspace-context-grounding)
+
 ## Lab 4.1 — Zero-Shot Prompting
 
 ### Goal
 
 Write prompts without examples.
 
-### Context
+### What This Is
 
 Zero-shot prompting asks the model to complete a task using only the instructions provided. This lab establishes a baseline for judging how much detail Copilot can infer when no example output or format is supplied.
 
@@ -27,6 +34,11 @@ Write a function that returns the Fibonacci sequence up to n.
 
 Copilot should generate a function, likely with a loop or recurrence, that returns Fibonacci values up to a stopping condition involving `n`. Check how it interprets “up to n,” especially whether it treats it as length, maximum value, or index.
 
+### What You Should Have Learned
+
+- Zero-shot prompts rely only on the instructions provided, leaving ambiguous terms open to interpretation.
+- Review how Copilot interpreted key requirements before using its output.
+
 ---
 
 ## Lab 4.2 — Few-Shot Prompting
@@ -35,7 +47,7 @@ Copilot should generate a function, likely with a loop or recurrence, that retur
 
 Guide Copilot with examples.
 
-### Context
+### What This Is
 
 Few-shot prompting provides examples that communicate the expected structure, style, or level of detail. This lab shows how examples can guide Copilot toward a more consistent result than a request without examples.
 
@@ -57,6 +69,11 @@ Now generate a third example using the same format.
 
 Copilot should produce a third example that follows the structure and style of the two examples. Compare its fields, ordering, and level of detail with the examples rather than judging only the surface wording.
 
+### What You Should Have Learned
+
+- Examples in a prompt communicate expected structure and style.
+- Evaluate few-shot output against the provided examples, including its fields and ordering.
+
 ---
 
 ## Lab 4.3 — Prompt Refinement
@@ -65,7 +82,7 @@ Copilot should produce a third example that follows the structure and style of t
 
 Improve bad prompts.
 
-### Context
+### What This Is
 
 Vague prompts leave important requirements open to interpretation, which often produces incomplete code. This lab compares a minimal request with a refined prompt that specifies the language, validation logic, and expected behavior.
 
@@ -89,14 +106,19 @@ Copilot may ask clarifying questions or return incomplete, generic code because 
 1. Type:
 
 ```text
-Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.
+Write a PowerShell function that validates email addresses using regex, includes comment-based help, and handles errors.
 ```
 
 2. Press Enter
 
 ### What You Should See
 
-The refined response should be more specific: it should contain Python code, a regular expression, a docstring, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
+The refined response should be more specific: it should contain PowerShell code, a regular expression, comment-based help, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
+
+### What You Should Have Learned
+
+- Specific requirements produce more useful and testable AI-generated code.
+- State the language, inputs, outputs, validation, and error behavior in a coding prompt.
 
 ---
 
@@ -106,7 +128,7 @@ The refined response should be more specific: it should contain Python code, a r
 
 Check whether Copilot uses the current file and workspace correctly.
 
-### Context
+### What This Is
 
 Copilot should use the files in your workspace as context when you ask it to modify code. This lab helps you verify that it grounds its answer in the actual repository instead of inventing details.
 
@@ -115,14 +137,17 @@ Copilot should use the files in your workspace as context when you ask it to mod
 1. Create:
 
 ```text
-context_demo.py
+context_demo.ps1
 ```
 
 2. Paste:
 
-```python
-def total(items):
-    return sum(items)
+```powershell
+function Get-Total {
+    param([int[]]$Items)
+
+    return ($Items | Measure-Object -Sum).Sum
+}
 ```
 
 3. Select the function.
@@ -139,7 +164,7 @@ Explain what this function does and suggest one improvement without changing its
 
 ### What You Should See
 
-Copilot should describe the actual function, mention that it sums the items, and propose a small improvement such as adding a docstring, type hints, or a better name.
+Copilot should describe the actual function, mention that it sums the items, and propose a small improvement such as adding comment-based help, parameter validation, or a better name.
 
 ### Verify
 
@@ -152,5 +177,10 @@ Use only the selected code and do not assume anything else about the project.
 ### What You Should See
 
 The answer should stay limited to the selected code instead of referring to unrelated files or imagined dependencies.
+
+### What You Should Have Learned
+
+- Ground Copilot requests in the selected code or relevant workspace files.
+- Detect when an answer invents dependencies or context that is not present.
 
 ---

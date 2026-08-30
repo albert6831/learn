@@ -42,6 +42,7 @@
 - Visual Studio Code
 - Git
 - PowerShell 6 or later
+- Pester 5 for the testing labs
 - GitHub Copilot extension
 - GitHub Copilot Chat extension
 
@@ -59,6 +60,14 @@ Download from:
 
 ```text
 https://git-scm.com/downloads
+```
+
+### Install Pester
+
+Run this in PowerShell before completing the testing labs:
+
+```powershell
+Install-Module -Name Pester -Scope CurrentUser
 ```
 
 ### Sign In to GitHub in VS Code

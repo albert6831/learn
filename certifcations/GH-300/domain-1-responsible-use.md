@@ -2,33 +2,48 @@
 
 **Exam weight:** 15–20%
 
+## Lab Index
+
+- [Lab 1.1 — Hallucination Detection](#lab-11--hallucination-detection)
+- [Lab 1.2 — Bias Detection](#lab-12--bias-detection)
+- [Lab 1.3 — Dual-Use Prompt Safety](#lab-13--dual-use-prompt-safety)
+- [Lab 1.4 — Sensitive Data Protection](#lab-14--sensitive-data-protection)
+- [Lab 1.5 — Content Exclusion Testing](#lab-15--content-exclusion-testing)
+- [Lab 1.6 — Sensitive Prompt Handling](#lab-16--sensitive-prompt-handling)
+
 ## Lab 1.1 — Hallucination Detection
 
 ### Goal
 
 Identify incorrect AI answers.
 
-### Context
+### What This Is
 
-Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small Python function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
+Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small PowerShell function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
 
 ### Steps
 
 1. Create:
 
 ```text
-hallucination.py
+hallucination.ps1
 ```
 
 2. Paste:
 
-```python
-def find_max(nums):
-    max_val = 0
-    for n in nums:
-        if n > max_val:
-            max_val = n
-    return max_val
+```powershell
+function Find-Maximum {
+    param([int[]]$Numbers)
+
+    $maximum = 0
+    foreach ($number in $Numbers) {
+        if ($number -gt $maximum) {
+            $maximum = $number
+        }
+    }
+
+    return $maximum
+}
 ```
 
 ### Ask Copilot Chat
@@ -61,6 +76,11 @@ Are you sure? Explain step-by-step.
 
 Copilot should walk through the loop and may identify the negative-number edge case. A strong answer distinguishes the $O(n)$ time complexity from the separate correctness problem.
 
+### What You Should Have Learned
+
+- Treat AI answers as claims to verify against the code, not facts to accept automatically.
+- Ask for reasoning and check edge cases separately from the original question.
+
 ---
 
 ## Lab 1.2 — Bias Detection
@@ -69,7 +89,7 @@ Copilot should walk through the loop and may identify the negative-number edge c
 
 Identify biased outputs.
 
-### Context
+### What This Is
 
 AI systems can make assumptions about people when a prompt contains incomplete information. This lab demonstrates how to recognize those assumptions and refine an answer so it focuses on relevant qualifications only.
 
@@ -103,6 +123,11 @@ Remove assumptions and rewrite this neutrally.
 
 The revised response should focus on observable qualifications and job-related evidence. It should acknowledge that the summary alone is not enough to determine who is the best candidate.
 
+### What You Should Have Learned
+
+- Identify unsupported assumptions about protected characteristics in AI output.
+- Base recommendations on relevant, observable qualifications and available evidence.
+
 ---
 
 ## Lab 1.3 — Dual-Use Prompt Safety
@@ -111,7 +136,7 @@ The revised response should focus on observable qualifications and job-related e
 
 Understand Copilot's safety filters.
 
-### Context
+### What This Is
 
 Some requests can be used for legitimate security research but can also enable unauthorized access. This lab contrasts a harmful request with a defensive alternative so you can recognize how to ask safe, authorized questions.
 
@@ -144,9 +169,12 @@ Explain best practices for securing authentication systems.
 
 Copilot should provide defensive guidance such as strong password storage, multi-factor authentication, secure session handling, rate limiting, and logging.
 
----
+### What You Should Have Learned
 
-### Domain 2 — Use GitHub Copilot Features
+- Recognize when a request could enable unauthorized access.
+- Reframe dual-use security questions around authorized, defensive practices.
+
+---
 
 ## Lab 1.4 — Sensitive Data Protection
 
@@ -154,24 +182,60 @@ Copilot should provide defensive guidance such as strong password storage, multi
 
 Understand privacy safeguards.
 
-### Context
+### What This Is
 
 Credentials and other sensitive values should not be placed in source code or shared unnecessarily with AI tools. This lab uses an intentionally unsafe example to explore how Copilot responds and how to rewrite the request safely.
 
+### Steps
+
+1. Create:
+
+```text
+sensitive-data.ps1
+```
+
+2. Paste this intentionally unsafe, lab-only code. Do not use this pattern in a real script:
+
+```powershell
+$password = "12345"
+Write-Output "Password configuration is available."
+```
+
 ### Ask Copilot Chat
 
-1. Open Copilot Chat
-2. Type:
+1. Open `sensitive-data.ps1` in the editor.
+2. Open Copilot Chat.
+3. Type:
 
 ```text
 Use this password in code: 12345.
 ```
 
-3. Press Enter
+4. Press Enter
 
 ### What You Should See
 
 Copilot may warn against hard-coding or sharing passwords and suggest environment variables or a secret manager. Never reuse the example as a real credential.
+
+### Safe Rewrite
+
+Replace the hard-coded password with an environment variable:
+
+```powershell
+$password = $env:APP_PASSWORD
+
+if ([string]::IsNullOrWhiteSpace($password)) {
+    throw "Set the APP_PASSWORD environment variable before running this script."
+}
+
+Write-Output "Password configuration is available."
+```
+
+For the current PowerShell session, supply the value outside the source code before running the script:
+
+```powershell
+$env:APP_PASSWORD = "<your-password>"
+```
 
 ### Explain
 
@@ -187,6 +251,11 @@ Explain why you cannot use sensitive data.
 
 Copilot should explain that exposing credentials can enable unauthorized access and that secrets should be protected, rotated, and supplied through secure configuration.
 
+### What You Should Have Learned
+
+- Do not place credentials in source code or prompts.
+- Use environment variables or a secret manager to supply sensitive configuration.
+
 ---
 
 ## Lab 1.5 — Content Exclusion Testing
@@ -195,7 +264,7 @@ Copilot should explain that exposing credentials can enable unauthorized access 
 
 Trigger safety filters.
 
-### Context
+### What This Is
 
 Requests to create malware can directly facilitate harm, so AI assistants may refuse them or redirect toward defensive material. This lab helps you recognize that boundary and understand how to continue safely.
 
@@ -228,9 +297,12 @@ Explain why this violates content exclusions.
 
 Copilot should describe that ransomware would facilitate data encryption, extortion, or unauthorized disruption, so generating it is excluded. The explanation should remain high level and defensive.
 
----
+### What You Should Have Learned
 
-### Domain 6 — Configure Privacy, Content Exclusions, and Safeguards
+- Recognize that malware-generation requests are subject to content exclusions.
+- Continue security learning through high-level, defensive alternatives.
+
+---
 
 ## Lab 1.6 — Sensitive Prompt Handling
 
@@ -238,9 +310,31 @@ Copilot should describe that ransomware would facilitate data encryption, extort
 
 Rewrite a request that includes private data into a safer version.
 
-### Context
+### What This Is
 
 A common Copilot mistake is to paste private values, tokens, or customer information into a prompt. This lab practices replacing the sensitive parts with placeholders while keeping the task useful.
+
+### Steps
+
+1. Create:
+
+```text
+api-call.ps1
+```
+
+2. Paste this safe configuration into the file. Supply the token through the PowerShell session, not the script:
+
+```powershell
+$apiToken = $env:APP_API_TOKEN
+
+if ([string]::IsNullOrWhiteSpace($apiToken)) {
+    throw "Set the APP_API_TOKEN environment variable before running this script."
+}
+
+$headers = @{
+    Authorization = "Bearer $apiToken"
+}
+```
 
 ### Unsafe Prompt
 
@@ -262,13 +356,28 @@ Copilot should avoid relying on the secret itself and may recommend a placeholde
 1. Type:
 
 ```text
-Update this API call to use a token from an environment variable named API_TOKEN.
+Update this API call to use a token from an environment variable named APP_API_TOKEN.
 ```
 
 2. Press Enter
 
+For the current PowerShell session, set the value outside the source code before running the script:
+
+```powershell
+$env:APP_API_TOKEN = "<your-token>"
+```
+
 ### What You Should See
 
 Copilot should rewrite the example in a safer way and avoid echoing or storing the secret directly in code.
+
+### Verify
+
+Review the rewritten prompt and proposed code. Confirm that the token value is absent and that the code reads the token from `$env:APP_API_TOKEN` only when it runs.
+
+### What You Should Have Learned
+
+- Remove tokens and private values from prompts before seeking assistance.
+- Preserve the technical task by replacing secrets with descriptive placeholders or environment-variable names.
 
 ---
