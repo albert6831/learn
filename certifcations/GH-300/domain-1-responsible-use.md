@@ -314,6 +314,28 @@ Rewrite a request that includes private data into a safer version.
 
 A common Copilot mistake is to paste private values, tokens, or customer information into a prompt. This lab practices replacing the sensitive parts with placeholders while keeping the task useful.
 
+### Steps
+
+1. Create:
+
+```text
+api-call.ps1
+```
+
+2. Paste this safe configuration into the file. Supply the token through the PowerShell session, not the script:
+
+```powershell
+$apiToken = $env:APP_API_TOKEN
+
+if ([string]::IsNullOrWhiteSpace($apiToken)) {
+    throw "Set the APP_API_TOKEN environment variable before running this script."
+}
+
+$headers = @{
+    Authorization = "Bearer $apiToken"
+}
+```
+
 ### Unsafe Prompt
 
 1. Open Copilot Chat
@@ -334,14 +356,24 @@ Copilot should avoid relying on the secret itself and may recommend a placeholde
 1. Type:
 
 ```text
-Update this API call to use a token from an environment variable named API_TOKEN.
+Update this API call to use a token from an environment variable named APP_API_TOKEN.
 ```
 
 2. Press Enter
 
+For the current PowerShell session, set the value outside the source code before running the script:
+
+```powershell
+$env:APP_API_TOKEN = "<your-token>"
+```
+
 ### What You Should See
 
 Copilot should rewrite the example in a safer way and avoid echoing or storing the secret directly in code.
+
+### Verify
+
+Review the rewritten prompt and proposed code. Confirm that the token value is absent and that the code reads the token from `$env:APP_API_TOKEN` only when it runs.
 
 ### What You Should Have Learned
 
