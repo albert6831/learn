@@ -201,6 +201,26 @@ Use this password in code: 12345.
 
 Copilot may warn against hard-coding or sharing passwords and suggest environment variables or a secret manager. Never reuse the example as a real credential.
 
+### Safe Code Example
+
+Use an environment variable for local development rather than placing a password in the script:
+
+```powershell
+$password = $env:APP_PASSWORD
+
+if ([string]::IsNullOrWhiteSpace($password)) {
+    throw "Set the APP_PASSWORD environment variable before running this script."
+}
+
+Write-Output "Password configuration is available."
+```
+
+For the current PowerShell session, supply the value outside the source code before running the script:
+
+```powershell
+$env:APP_PASSWORD = "<your-password>"
+```
+
 ### Explain
 
 1. Type:
