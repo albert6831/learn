@@ -30,14 +30,18 @@ Copilot Chat can help locate the difference between a value and a callable metho
 1. Create:
 
 ```text
-bug.py
+bug.ps1
 ```
 
 2. Paste:
 
-```python
-def greet(name):
-    return "Hello " + name.upper
+```powershell
+function Get-Greeting {
+    param([string]$Name)
+
+    $upperName = $Name.ToUpper
+    return "Hello " + $upperName.Trim()
+}
 ```
 
 ### Ask Copilot Chat
@@ -47,14 +51,14 @@ def greet(name):
 3. Type:
 
 ```text
-Why does this function fail when I call greet('Alberto')?
+Why does this function fail when I call Get-Greeting -Name 'Alberto'?
 ```
 
 4. Press Enter
 
 ### What You Should See
 
-Copilot should point out that `name.upper` is a method object and needs parentheses. Calling `greet('Alberto')` should therefore fail when Python tries to concatenate the string with that method object.
+Copilot should point out that `$Name.ToUpper` refers to a method and needs parentheses. Calling `Get-Greeting -Name 'Alberto'` should therefore fail when the script tries to call `Trim()` on that method object.
 
 ### Fix
 
@@ -68,7 +72,7 @@ Fix this function.
 
 ### What You Should See
 
-Copilot should change the expression to `name.upper()` and explain that calling the method returns the uppercase string `ALBERTO`.
+Copilot should change the expression to `$Name.ToUpper()` and explain that calling the method returns the uppercase string `ALBERTO`.
 
 ---
 
@@ -87,15 +91,21 @@ Refactoring improves readability and maintainability without changing intended b
 1. Create:
 
 ```text
-refactor.py
+refactor.ps1
 ```
 
 2. Paste:
 
-```python
-def add(a,b):
-    c=a+b
-    return c
+```powershell
+function Add-Numbers {
+    param(
+        [int]$First,
+        [int]$Second
+    )
+
+    $sum = $First + $Second
+    return $sum
+}
 ```
 
 ### Ask Copilot Edits
@@ -113,23 +123,23 @@ Refactor this code to be more concise.
 
 ### What You Should See
 
-Copilot Edits should propose a shorter implementation, such as returning `a + b` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review.
+Copilot Edits should propose a shorter implementation, such as returning `$First + $Second` directly. The result should preserve the function's behavior and should be shown as an editable change for you to review.
 
-### Add Type Hints
+### Add Help
 
 1. Highlight the refactored function
 2. Press Ctrl+I
 3. Type:
 
 ```text
-Add type hints and a docstring.
+Add comment-based help that documents the parameters and return value.
 ```
 
 4. Press Enter
 
 ### What You Should See
 
-The function should gain type annotations for its parameters and return value, plus a docstring describing the addition operation. Review the inferred types before accepting the edit.
+The function should gain comment-based help describing the addition operation, its parameters, and its output. Review the help text before accepting the edit.
 
 ---
 
@@ -156,7 +166,7 @@ copilot
 4. When prompted, enter:
 
 ```text
-Create or update README.md for this repository. Describe a Python tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.
+Create or update README.md for this repository. Describe a PowerShell tool that cleans CSV files. Inspect the project files first and do not invent unsupported commands.
 ```
 
 ### What You Should See
@@ -181,14 +191,14 @@ Agent Mode is intended for tasks that involve several related actions, such as c
 2. Type:
 
 ```text
-Create a new folder called csv_cleaner, generate a Python script that reads a CSV, cleans missing values, and writes a new file.
+Create a new folder called csv_cleaner, generate a PowerShell script that reads a CSV, cleans missing values, and writes a new file.
 ```
 
 3. Press Enter
 
 ### What You Should See
 
-Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a Python script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes before accepting them.
+Agent Mode should propose or perform several steps: create the `csv_cleaner` folder, add a PowerShell script, and implement CSV input, missing-value handling, and output writing. Review any planned file changes before accepting them.
 
 ### Add Logging
 
@@ -233,29 +243,24 @@ practice-pr-summary
 6. Name the file:
 
 ```text
-clean_orders.py
+clean_orders.ps1
 ```
 
 7. Paste:
 
-```python
-import csv
+```powershell
+param(
+    [string]$InputFile,
+    [string]$OutputFile
+)
 
-
-def clean_orders(input_file, output_file):
-    with open(input_file) as source:
-        reader = csv.DictReader(source)
-        orders = []
-
-        for row in reader:
-            if row["email"]:
-                row["email"] = row["email"].lower()
-                orders.append(row)
-
-    with open(output_file, "w") as target:
-        writer = csv.DictWriter(target, fieldnames=reader.fieldnames)
-        writer.writeheader()
-        writer.writerows(orders)
+Import-Csv -LiteralPath $InputFile |
+    Where-Object { $_.email } |
+    ForEach-Object {
+        $_.email = $_.email.ToLowerInvariant()
+        $_
+    } |
+    Export-Csv -LiteralPath $OutputFile -NoTypeInformation
 ```
 
 8. Under **Commit new file**, select **Commit new file**.
@@ -303,16 +308,17 @@ Inline completion is code that Copilot suggests as you type in the editor. Accep
 1. Create:
 
 ```text
-inline_demo.py
+inline_demo.ps1
 ```
 
 2. Paste:
 
-```python
-def square_list(values):
+```powershell
+function ConvertTo-SquaredList {
+    param([int[]]$Values)
 ```
 
-3. On the next line, begin typing `return [` or `result = []` so Copilot can suggest an inline completion.
+3. On the next line, begin typing `$result = foreach ($value in $Values) {` so Copilot can suggest an inline completion.
 
 ### What You Should See
 
@@ -379,14 +385,14 @@ Custom agents use a profile file to define their name, purpose, and instructions
 ```markdown
 ---
 name: Reviewer
-description: Reviews Python changes briefly.
+description: Reviews PowerShell changes briefly.
 ---
 
-Review Python changes for bugs and missing tests. Be concise.
+Review PowerShell changes for bugs and missing tests. Be concise.
 ```
 
 3. Open Copilot Chat and select the custom agent if it appears.
-4. Ask it to review a Python file.
+4. Ask it to review a PowerShell file.
 
 ### What You Should See
 
@@ -451,7 +457,7 @@ copilot
 3. Ask:
 
 ```text
-List the Python files in this repository.
+List the PowerShell files in this repository.
 ```
 
 4. Ask:

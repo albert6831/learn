@@ -19,25 +19,31 @@ Identify incorrect AI answers.
 
 ### What This Is
 
-Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small Python function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
+Copilot can produce an answer that sounds confident even when it misses an important detail. This lab uses a small PowerShell function to practice checking an AI explanation against the code and asking for a step-by-step explanation.
 
 ### Steps
 
 1. Create:
 
 ```text
-hallucination.py
+hallucination.ps1
 ```
 
 2. Paste:
 
-```python
-def find_max(nums):
-    max_val = 0
-    for n in nums:
-        if n > max_val:
-            max_val = n
-    return max_val
+```powershell
+function Find-Maximum {
+    param([int[]]$Numbers)
+
+    $maximum = 0
+    foreach ($number in $Numbers) {
+        if ($number -gt $maximum) {
+            $maximum = $number
+        }
+    }
+
+    return $maximum
+}
 ```
 
 ### Ask Copilot Chat

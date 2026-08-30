@@ -96,14 +96,14 @@ Copilot may ask clarifying questions or return incomplete, generic code because 
 1. Type:
 
 ```text
-Write a Python function that validates email addresses using regex, includes docstrings, and handles errors.
+Write a PowerShell function that validates email addresses using regex, includes comment-based help, and handles errors.
 ```
 
 2. Press Enter
 
 ### What You Should See
 
-The refined response should be more specific: it should contain Python code, a regular expression, a docstring, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
+The refined response should be more specific: it should contain PowerShell code, a regular expression, comment-based help, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
 
 ---
 
@@ -122,14 +122,17 @@ Copilot should use the files in your workspace as context when you ask it to mod
 1. Create:
 
 ```text
-context_demo.py
+context_demo.ps1
 ```
 
 2. Paste:
 
-```python
-def total(items):
-    return sum(items)
+```powershell
+function Get-Total {
+    param([int[]]$Items)
+
+    return ($Items | Measure-Object -Sum).Sum
+}
 ```
 
 3. Select the function.
@@ -146,7 +149,7 @@ Explain what this function does and suggest one improvement without changing its
 
 ### What You Should See
 
-Copilot should describe the actual function, mention that it sums the items, and propose a small improvement such as adding a docstring, type hints, or a better name.
+Copilot should describe the actual function, mention that it sums the items, and propose a small improvement such as adding comment-based help, parameter validation, or a better name.
 
 ### Verify
 

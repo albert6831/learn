@@ -17,21 +17,27 @@ Generate tests using Copilot Chat.
 
 ### What This Is
 
-Tests document expected behavior and help catch regressions when code changes. This lab uses a simple function so you can evaluate whether Copilot generates useful pytest cases, including normal and edge cases.
+Tests document expected behavior and help catch regressions when code changes. This lab uses a simple function so you can evaluate whether Copilot generates useful Pester cases, including normal and edge cases.
 
 ### Steps
 
 1. Create:
 
 ```text
-calc.py
+calc.ps1
 ```
 
 2. Paste:
 
-```python
-def add(a, b):
-    return a + b
+```powershell
+function Add-Numbers {
+    param(
+        [int]$First,
+        [int]$Second
+    )
+
+    return $First + $Second
+}
 ```
 
 ### Ask Copilot Chat
@@ -40,14 +46,14 @@ def add(a, b):
 2. Type:
 
 ```text
-Generate pytest unit tests for the add() function.
+Generate Pester tests for the Add-Numbers function.
 ```
 
 3. Press Enter
 
 ### What You Should See
 
-Copilot should generate pytest code that imports or calls `add()` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run them to verify the behavior.
+Copilot should generate Pester code that dot-sources the script or calls `Add-Numbers` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run `Invoke-Pester` to verify the behavior.
 
 ---
 
@@ -59,24 +65,29 @@ Modernize old code.
 
 ### What This Is
 
-Legacy code may be correct but unnecessarily verbose or difficult to maintain. This lab practices using Copilot to express a loop with a list comprehension while checking that the refactoring preserves behavior.
+Legacy code may be correct but unnecessarily verbose or difficult to maintain. This lab practices using Copilot to simplify a loop while checking that the refactoring preserves behavior.
 
 ### Steps
 
 1. Create:
 
 ```text
-legacy.py
+legacy.ps1
 ```
 
 2. Paste:
 
-```python
-def process(data):
-    result = []
-    for i in range(len(data)):
-        result.append(data[i] * 2)
-    return result
+```powershell
+function ConvertTo-DoubledValues {
+    param([int[]]$Values)
+
+    $result = @()
+    foreach ($value in $Values) {
+        $result += $value * 2
+    }
+
+    return $result
+}
 ```
 
 ### Ask Copilot Edits
@@ -86,14 +97,14 @@ def process(data):
 3. Type:
 
 ```text
-Refactor this code using list comprehension.
+Refactor this code using the PowerShell pipeline.
 ```
 
 4. Press Enter
 
 ### What You Should See
 
-Copilot Edits should replace the indexed loop with a list comprehension equivalent to `[value * 2 for value in data]`. The function should still return a new list with every input value doubled.
+Copilot Edits should replace the explicit loop with a pipeline expression such as `$Values | ForEach-Object { $_ * 2 }`. The function should still return a new collection with every input value doubled.
 
 ---
 
@@ -142,20 +153,26 @@ Copilot can suggest code that looks correct but still fails tests or misses edge
 1. Create:
 
 ```text
-divide.py
+divide.ps1
 ```
 
 2. Paste:
 
-```python
-def divide(a, b):
-    return a / b
+```powershell
+function Divide-Numbers {
+    param(
+        [double]$Dividend,
+        [double]$Divisor
+    )
+
+    return $Dividend / $Divisor
+}
 ```
 
 3. Ask Copilot Chat:
 
 ```text
-Write tests for divide().
+Write Pester tests for Divide-Numbers.
 ```
 
 ### What You Should See
