@@ -34,6 +34,11 @@ Write a function that returns the Fibonacci sequence up to n.
 
 Copilot should generate a function, likely with a loop or recurrence, that returns Fibonacci values up to a stopping condition involving `n`. Check how it interprets “up to n,” especially whether it treats it as length, maximum value, or index.
 
+### What You Should Have Learned
+
+- Zero-shot prompts rely only on the instructions provided, leaving ambiguous terms open to interpretation.
+- Review how Copilot interpreted key requirements before using its output.
+
 ---
 
 ## Lab 4.2 — Few-Shot Prompting
@@ -63,6 +68,11 @@ Now generate a third example using the same format.
 ### What You Should See
 
 Copilot should produce a third example that follows the structure and style of the two examples. Compare its fields, ordering, and level of detail with the examples rather than judging only the surface wording.
+
+### What You Should Have Learned
+
+- Examples in a prompt communicate expected structure and style.
+- Evaluate few-shot output against the provided examples, including its fields and ordering.
 
 ---
 
@@ -104,6 +114,11 @@ Write a PowerShell function that validates email addresses using regex, includes
 ### What You Should See
 
 The refined response should be more specific: it should contain PowerShell code, a regular expression, comment-based help, and an explicit approach to invalid input or errors. Review the validation rules before using the function.
+
+### What You Should Have Learned
+
+- Specific requirements produce more useful and testable AI-generated code.
+- State the language, inputs, outputs, validation, and error behavior in a coding prompt.
 
 ---
 
@@ -162,5 +177,10 @@ Use only the selected code and do not assume anything else about the project.
 ### What You Should See
 
 The answer should stay limited to the selected code instead of referring to unrelated files or imagined dependencies.
+
+### What You Should Have Learned
+
+- Ground Copilot requests in the selected code or relevant workspace files.
+- Detect when an answer invents dependencies or context that is not present.
 
 ---

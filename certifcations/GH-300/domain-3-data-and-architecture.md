@@ -32,6 +32,11 @@ Draw a diagram of how GitHub Copilot processes a prompt from input to output.
 
 Copilot should return a diagram or diagram markup showing a flow from the user's prompt through context gathering and model processing to a suggestion or response. Treat the diagram as a high-level explanation, not an implementation detail.
 
+### What You Should Have Learned
+
+- Describe Copilot's suggestion lifecycle as a high-level flow from prompt and context to output.
+- Avoid treating a generated conceptual diagram as an exact product implementation.
+
 ---
 
 ## Lab 3.2 — Token Limit Awareness
@@ -82,6 +87,11 @@ Summarize in 500-token chunks.
 ### What You Should See
 
 Copilot should organize the response into successive summaries for roughly 500-token sections. Chunk boundaries and token counts may be approximate, so compare the chunks with the source for missing details.
+
+### What You Should Have Learned
+
+- Context-window limits can affect what an AI system can process and retain.
+- Split long material into manageable chunks and check summaries against the source.
 
 ---
 

@@ -74,6 +74,11 @@ Fix this function.
 
 Copilot should change the expression to `$Name.ToUpper()` and explain that calling the method returns the uppercase string `ALBERTO`.
 
+### What You Should Have Learned
+
+- Use Copilot Chat to explain a reproducible bug, then confirm the explanation in the source.
+- Distinguish a method reference from the value returned by invoking that method.
+
 ---
 
 ## Lab 2.2 — Copilot Edits Refactoring
@@ -141,6 +146,11 @@ Add comment-based help that documents the parameters and return value.
 
 The function should gain comment-based help describing the addition operation, its parameters, and its output. Review the help text before accepting the edit.
 
+### What You Should Have Learned
+
+- Use Copilot Edits for focused refactoring and documentation changes.
+- Confirm that a refactor preserves behavior before accepting it.
+
 ---
 
 ## Lab 2.3 — Copilot CLI Documentation
@@ -172,6 +182,11 @@ Create or update README.md for this repository. Describe a PowerShell tool that 
 ### What You Should See
 
 Copilot CLI should propose README content with a project description and likely sections such as usage, installation, and examples. Review the proposed changes and approve them only after checking that they match the repository.
+
+### What You Should Have Learned
+
+- Use Copilot CLI to draft documentation from inspected repository context.
+- Reject unsupported commands or claims in generated documentation.
 
 ---
 
@@ -213,6 +228,11 @@ Add logging to each step.
 ### What You Should See
 
 The script should be updated with logging around the main workflow, such as reading the input, cleaning values, and writing the output. The generated code should use appropriate log levels and remain readable.
+
+### What You Should Have Learned
+
+- Use Agent Mode for connected implementation tasks that span files and steps.
+- Review the plan, generated changes, and operational details such as logging.
 
 ---
 
@@ -291,6 +311,11 @@ GitHub only shows **Request** when Copilot code review is available.
 
 Check one comment against the code. Do not approve or merge based only on Copilot's review.
 
+### What You Should Have Learned
+
+- Request Copilot review to surface potential bugs, security concerns, and test gaps.
+- Validate each review comment against the diff before acting on it.
+
 ---
 
 ## Lab 2.6 — Inline Completion Review
@@ -333,6 +358,11 @@ Copilot may suggest a full implementation inline in the editor.
 
 You should be able to compare how Copilot behaves when accepted versus rejected. A good result is one that matches the intended behavior without extra logic.
 
+### What You Should Have Learned
+
+- Treat inline completions as editable suggestions, not automatic decisions.
+- Compare accepted suggestions with the intended behavior and reject unnecessary code.
+
 ---
 
 ## Lab 2.7 — Agent Sessions and Sub-agents
@@ -364,6 +394,11 @@ The agent may show a plan and delegate work to a sub-agent.
 ### Verify
 
 Check that the result matches the files inspected.
+
+### What You Should Have Learned
+
+- Agent sessions retain task context while sub-agents can investigate focused questions.
+- Confirm that the final recommendation is grounded in the files actually inspected.
 
 ---
 
@@ -402,6 +437,11 @@ The agent should follow the profile instructions. Custom agents may be unavailab
 
 Check that the response is concise and mentions bugs or tests.
 
+### What You Should Have Learned
+
+- Custom-agent profiles and repository instructions shape Copilot's behavior.
+- Verify that an agent follows its stated scope and review criteria.
+
 ---
 
 ## Lab 2.9 — MCP and External Tools
@@ -432,6 +472,11 @@ Copilot may list available MCP tools or report that none are configured.
 ### Verify
 
 Record one tool's purpose and required permission. Do not approve unfamiliar tools.
+
+### What You Should Have Learned
+
+- MCP tools extend Copilot with external capabilities that require deliberate permission review.
+- Understand a tool's purpose and access before approving it.
 
 ---
 
@@ -473,5 +518,10 @@ The second response should use the first response's context.
 ### Verify
 
 Compare both responses with the repository.
+
+### What You Should Have Learned
+
+- Copilot CLI can retain useful context across related prompts in one session.
+- Check session-grounded responses against the repository for completeness and accuracy.
 
 ---

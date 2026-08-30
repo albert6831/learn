@@ -46,6 +46,11 @@ Explain how audit logging works.
 
 Copilot should explain that audit logs record relevant organizational events so administrators can review activity, investigate issues, and support compliance. The exact events and retention depend on the environment.
 
+### What You Should Have Learned
+
+- Duplication detection and audit logs are organizational safeguards for responsible AI adoption.
+- Treat product-control details as environment- and policy-dependent.
+
 ---
 
 ## Lab 6.2 — Organization Policies
@@ -72,3 +77,8 @@ Policies can control which Copilot features members can use. Settings depend on 
 ### Verify
 
 Record one policy and the feature it controls. Do not change a production setting.
+
+### What You Should Have Learned
+
+- Organization policies govern available Copilot features and related privacy or security controls.
+- Review and document settings carefully before changing production configuration.

@@ -55,6 +55,11 @@ Generate Pester tests for the Add-Numbers function.
 
 Copilot should generate Pester code that dot-sources the script or calls `Add-Numbers` and checks expected sums, commonly including positive, negative, zero, or boundary-style inputs. Save the tests and run `Invoke-Pester` to verify the behavior.
 
+### What You Should Have Learned
+
+- Use Copilot to draft unit tests that cover normal behavior and meaningful edge cases.
+- Run generated tests instead of assuming their assertions or setup are correct.
+
 ---
 
 ## Lab 5.2 — Refactor Legacy Code
@@ -106,6 +111,11 @@ Refactor this code using the PowerShell pipeline.
 
 Copilot Edits should replace the explicit loop with a pipeline expression such as `$Values | ForEach-Object { $_ * 2 }`. The function should still return a new collection with every input value doubled.
 
+### What You Should Have Learned
+
+- Copilot can help modernize verbose code while retaining its intended behavior.
+- Compare outputs before and after a refactor to verify behavioral equivalence.
+
 ---
 
 ## Lab 5.3 — Generate Documentation
@@ -133,6 +143,11 @@ copilot
 ### What You Should See
 
 Copilot CLI should ask for project context or propose an initial README from the files it can inspect. The result may be incomplete if the project has no clear metadata, entry point, or usage instructions.
+
+### What You Should Have Learned
+
+- Copilot CLI can create a useful documentation starting point after inspecting a project.
+- Documentation quality depends on the accuracy and completeness of available repository context.
 
 ---
 
@@ -187,5 +202,10 @@ Copilot should produce tests for normal input and at least one edge case such as
 ### What You Should See
 
 You should confirm whether the tests pass and whether the generated implementation handles edge cases the way you expect.
+
+### What You Should Have Learned
+
+- Generated code and tests require verification before acceptance.
+- Use test results and diff review to confirm both normal behavior and edge-case handling.
 
 ---

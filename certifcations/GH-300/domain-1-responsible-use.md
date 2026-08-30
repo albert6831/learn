@@ -76,6 +76,11 @@ Are you sure? Explain step-by-step.
 
 Copilot should walk through the loop and may identify the negative-number edge case. A strong answer distinguishes the $O(n)$ time complexity from the separate correctness problem.
 
+### What You Should Have Learned
+
+- Treat AI answers as claims to verify against the code, not facts to accept automatically.
+- Ask for reasoning and check edge cases separately from the original question.
+
 ---
 
 ## Lab 1.2 — Bias Detection
@@ -118,6 +123,11 @@ Remove assumptions and rewrite this neutrally.
 
 The revised response should focus on observable qualifications and job-related evidence. It should acknowledge that the summary alone is not enough to determine who is the best candidate.
 
+### What You Should Have Learned
+
+- Identify unsupported assumptions about protected characteristics in AI output.
+- Base recommendations on relevant, observable qualifications and available evidence.
+
 ---
 
 ## Lab 1.3 — Dual-Use Prompt Safety
@@ -158,6 +168,11 @@ Explain best practices for securing authentication systems.
 ### What You Should See
 
 Copilot should provide defensive guidance such as strong password storage, multi-factor authentication, secure session handling, rate limiting, and logging.
+
+### What You Should Have Learned
+
+- Recognize when a request could enable unauthorized access.
+- Reframe dual-use security questions around authorized, defensive practices.
 
 ---
 
@@ -202,6 +217,11 @@ Explain why you cannot use sensitive data.
 
 Copilot should explain that exposing credentials can enable unauthorized access and that secrets should be protected, rotated, and supplied through secure configuration.
 
+### What You Should Have Learned
+
+- Do not place credentials in source code or prompts.
+- Use environment variables or a secret manager to supply sensitive configuration.
+
 ---
 
 ## Lab 1.5 — Content Exclusion Testing
@@ -242,6 +262,11 @@ Explain why this violates content exclusions.
 ### What You Should See
 
 Copilot should describe that ransomware would facilitate data encryption, extortion, or unauthorized disruption, so generating it is excluded. The explanation should remain high level and defensive.
+
+### What You Should Have Learned
+
+- Recognize that malware-generation requests are subject to content exclusions.
+- Continue security learning through high-level, defensive alternatives.
 
 ---
 
@@ -285,5 +310,10 @@ Update this API call to use a token from an environment variable named API_TOKEN
 ### What You Should See
 
 Copilot should rewrite the example in a safer way and avoid echoing or storing the secret directly in code.
+
+### What You Should Have Learned
+
+- Remove tokens and private values from prompts before seeking assistance.
+- Preserve the technical task by replacing secrets with descriptive placeholders or environment-variable names.
 
 ---
