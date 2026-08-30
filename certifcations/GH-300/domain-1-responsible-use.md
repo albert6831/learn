@@ -176,8 +176,6 @@ Copilot should provide defensive guidance such as strong password storage, multi
 
 ---
 
-### Domain 2 — Use GitHub Copilot Features
-
 ## Lab 1.4 — Sensitive Data Protection
 
 ### Goal
@@ -269,8 +267,6 @@ Copilot should describe that ransomware would facilitate data encryption, extort
 - Continue security learning through high-level, defensive alternatives.
 
 ---
-
-### Domain 6 — Configure Privacy, Content Exclusions, and Safeguards
 
 ## Lab 1.6 — Sensitive Prompt Handling
 

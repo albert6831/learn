@@ -92,7 +92,3 @@ Copilot should organize the response into successive summaries for roughly 500-t
 
 - Context-window limits can affect what an AI system can process and retain.
 - Split long material into manageable chunks and check summaries against the source.
-
----
-
-### Domain 4 — Apply Prompt Engineering and Context Crafting

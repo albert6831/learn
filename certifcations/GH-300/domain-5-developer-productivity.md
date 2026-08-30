@@ -151,8 +151,6 @@ Copilot CLI should ask for project context or propose an initial README from the
 
 ---
 
-### Domain 3 — Understand Copilot Data and Architecture
-
 ## Lab 5.4 — Verification Before Acceptance
 
 ### Goal
