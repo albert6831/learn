@@ -93,6 +93,17 @@ Refactor code using Copilot Edits.
 
 Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation.
 
+### Briefing: What Copilot Edits Is
+
+Copilot Edits turns a natural-language request into a suggested code change that you can review and accept.
+
+Common ways to use it:
+
+- **Inline chat:** Place the cursor in the code, press `Ctrl+I`, and ask for a change. Example: `Refactor Add-Numbers to return the sum directly.`
+- **Highlight plus command:** Select the code, press `Ctrl+I`, and enter a command. Example: `Add help for this function.`
+
+Always review the suggested edit before accepting it.
+
 ### Steps
 
 1. Create:
