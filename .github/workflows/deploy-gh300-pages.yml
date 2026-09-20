@@ -28,6 +28,12 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
+      - name: Validate Markdown as print-view source
+        run: |
+          test -f certifcations/GH-300/GH-300-study-notes.md
+          grep -q 'const sourceUrl = "GH-300-study-notes.md"' certifcations/GH-300/gh-300-print.html
+          grep -q '^Last updated: ' certifcations/GH-300/GH-300-study-notes.md
+
       - name: Build Pages artifact
         run: |
           mkdir site
