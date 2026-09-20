@@ -14,6 +14,8 @@
 - [Lab 2.8 — Custom Agents and Instructions](#lab-28--custom-agents-and-instructions)
 - [Lab 2.9 — MCP and External Tools](#lab-29--mcp-and-external-tools)
 - [Lab 2.10 — Copilot CLI Sessions](#lab-210--copilot-cli-sessions)
+- [Lab 2.11 — Chat Slash Commands](#lab-211--chat-slash-commands)
+- [Lab 2.12 — Editor Code Actions](#lab-212--editor-code-actions)
 
 ## Lab 2.1 — Copilot Chat Debugging
 
@@ -90,6 +92,17 @@ Refactor code using Copilot Edits.
 ### What This Is
 
 Refactoring improves readability and maintainability without changing intended behavior. This lab uses Copilot Edits to make a small function more concise, then asks for type hints and documentation.
+
+### Briefing: What Copilot Edits Is
+
+Copilot Edits turns a natural-language request into a suggested code change that you can review and accept.
+
+Common ways to use it:
+
+- **Inline chat:** Place the cursor in the code, press `Ctrl+I`, and ask for a change. Example: `Refactor Add-Numbers to return the sum directly.`
+- **Highlight plus command:** Select the code, press `Ctrl+I`, and enter a command. Example: `Add help for this function.`
+
+Always review the suggested edit before accepting it.
 
 ### Steps
 
@@ -523,5 +536,76 @@ Compare both responses with the repository.
 
 - Copilot CLI can retain useful context across related prompts in one session.
 - Check session-grounded responses against the repository for completeness and accuracy.
+
+---
+
+## Lab 2.11 — Chat Slash Commands
+
+### Goal
+
+Use a supported Copilot Chat slash command in VS Code.
+
+### What This Is
+
+Slash commands provide shortcuts for common chat tasks. The available commands can vary by VS Code and Copilot version, so use the command picker instead of assuming a particular command is installed.
+
+### Steps
+
+1. Open `bug.ps1` from Lab 2.1.
+2. Open Copilot Chat and start a new conversation.
+3. Type `/` in the chat input.
+4. Inspect the slash commands shown in the picker.
+5. Select a command that explains code, such as `/explain` if it is available.
+6. Submit the selected command with this request:
+
+```text
+Explain the Get-Greeting function and identify the error it contains.
+```
+
+### What You Should See
+
+Copilot should run the selected command and explain the code or the error. If `/explain` is not available, select another displayed command and follow its input prompt.
+
+### Verify
+
+Confirm that the response identifies `$Name.ToUpper` as a method reference rather than the uppercase string returned by `$Name.ToUpper()`.
+
+### What You Should Have Learned
+
+- Use the chat command picker to discover the slash commands available in your installed version.
+- Treat slash commands as task shortcuts and still verify their output against the source.
+
+---
+
+## Lab 2.12 — Editor Code Actions
+
+### Goal
+
+Use a VS Code editor Code Action to apply a language-aware refactoring.
+
+### What This Is
+
+Code Actions are provided by VS Code extensions and language services. They are separate from Copilot prompts: use them for well-defined editor transformations, then use Copilot when you need explanation, broader changes, or review.
+
+### Steps
+
+1. Open `refactor.ps1` from Lab 2.2.
+2. Place the cursor on the `$sum` assignment or the `return $sum` statement.
+3. Open the Code Actions menu with `Ctrl+.` or select the lightbulb in the editor gutter.
+4. Inspect the available actions.
+5. Apply a refactoring action only if the installed PowerShell extension offers one that simplifies the function without changing its result.
+
+### What You Should See
+
+The Code Actions menu may offer diagnostics, quick fixes, or refactorings. The exact actions depend on the PowerShell extension and the code at the cursor; it is valid for no suitable refactoring to be available.
+
+### Verify
+
+Run the function before and after any applied action with the same inputs. Confirm that `Add-Numbers -First 2 -Second 3` still returns `5`.
+
+### What You Should Have Learned
+
+- Open Code Actions from the lightbulb or `Ctrl+.` to find extension-provided fixes and refactorings.
+- Choose a language-aware Code Action for a bounded transformation and use Copilot for conversational or multi-file work.
 
 ---
