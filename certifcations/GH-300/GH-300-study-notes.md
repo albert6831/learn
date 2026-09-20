@@ -120,7 +120,7 @@ More safeguards appear in [Domain 6](#6-configure-privacy-content-exclusions-and
 - Keep patterns precise.
 - Remember: exclusions are **not** a secret-removal tool.
 
-**Version warning:** support differs by feature and client. Current docs identify **Edit** and **Agent** modes in **Visual Studio Code** as unsupported for content exclusions, and IDEs may still expose indirect semantic data (for example type info). Verify the current support matrix before relying on exclusions.
+**Version warning:** content-exclusion support varies by feature and client. **Time-sensitive example:** at the time these notes were updated, docs listed **Edit** and **Agent** modes in **Visual Studio Code** as unsupported for content exclusions, and IDEs could still expose indirect semantic data (for example type info). Always verify the current support matrix before relying on exclusions.
 
 ### Copilot CLI
 
