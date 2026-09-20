@@ -32,6 +32,7 @@ jobs:
         run: |
           mkdir site
           cp certifcations/GH-300/gh-300-print.html site/index.html
+          cp certifcations/GH-300/GH-300-study-notes.md site/GH-300-study-notes.md
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
