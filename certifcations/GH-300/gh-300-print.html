@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GH-300 Unified Deep Dive - Print View</title>
-  <meta name="last-updated" content="September 20, 2026 - 12:23 PM EDT">
+  <title>GH-300 Study Notes - Print View</title>
+  <meta name="last-updated" content="September 20, 2026 - 12:41 PM EDT">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
@@ -187,7 +187,7 @@
     </span>
   </header>
   <main id="notes">
-    <p class="status">Loading study notes... Last updated: September 20, 2026 - 12:23 PM EDT</p>
+    <p class="status">Loading study notes... Last updated: September 20, 2026 - 12:41 PM EDT</p>
   </main>
   <script>
     const sourceUrl = "GH-300-study-notes.md";
@@ -202,7 +202,7 @@
       })
       .then((markdown) => {
         notes.innerHTML = marked.parse(markdown);
-        document.title = "GH-300 Unified Deep Dive";
+        document.title = "GH-300 Study Notes - Print View";
       })
       .catch((error) => {
         notes.innerHTML = `<h1>Unable to load the study notes</h1><p>${error.message}</p><p>Download the Markdown file and serve this page from a local web server.</p>`;
