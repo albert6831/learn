@@ -120,13 +120,14 @@ More safeguards appear in [Domain 6](#6-configure-privacy-content-exclusions-and
 - Keep patterns precise.
 - Remember: exclusions are **not** a secret-removal tool.
 
-**Version warning:** support differs by feature and client. Current docs explicitly note that content exclusions are unsupported for some **Edit** and **Agent** mode experiences in Visual Studio Code and other editors, and IDEs may still expose indirect semantic data (for example type info). Verify the current support matrix before relying on exclusions.
+**Version warning:** support differs by feature and client. Current docs identify **Edit** and **Agent** modes in Visual Studio Code and other editors as unsupported for content exclusions, and IDEs may still expose indirect semantic data (for example type info). Verify the current support matrix before relying on exclusions.
 
 ### Copilot CLI
 
 **Copilot CLI** is terminal-based Copilot help.
 
 - Use for command explanation, script drafts, repo questions, and file operations.
+- It is separate from the traditional GitHub CLI (`gh`) command set.
 - Install/auth flow varies by OS and release.
 - Typical flow: install -> `copilot --version` -> start `copilot` -> `/login` if needed.
 - Use `/help` to see commands in your installed version.
