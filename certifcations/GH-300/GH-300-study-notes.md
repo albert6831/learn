@@ -127,10 +127,10 @@ More safeguards appear in [Domain 6](#6-configure-privacy-content-exclusions-and
 **Copilot CLI** is terminal-based Copilot help.
 
 - Use for command explanation, script drafts, repo questions, and file operations.
-- It is separate from the traditional GitHub CLI (`gh`) command set.
-- Install/auth flow varies by OS and release.
-- Typical flow: install -> `copilot --version` -> start `copilot` -> `/login` if needed.
-- Use `/help` to see commands in your installed version.
+- It is distinct from normal repository/admin `gh` commands, even when surfaced through GitHub CLI integrations.
+- Install/auth/command syntax is version-dependent.
+- Depending on release, you may use a standalone `copilot` command or a GitHub CLI Copilot integration.
+- Check current official docs, then use the installed help command (such as `/help` or equivalent) to confirm available commands.
 
 **Safety:** review every command and file change before running.
 
