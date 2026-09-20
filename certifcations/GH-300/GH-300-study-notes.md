@@ -1,12 +1,10 @@
 # GH-300 Study Notes
 
-Last updated: September 20, 2026 - 12:23 PM EDT
+Last updated: September 20, 2026 - 12:41 PM EDT
 
 [Open the clean print view on GitHub Pages](https://albert6831.github.io/learn/)
 
 For local use before GitHub Pages is enabled, open [the local print view](gh-300-print.html) through a local web server.
-
-These notes follow the GH-300 exam order. **Product behavior can change by version, plan, editor, and policy.** Always verify with current GitHub docs and your tenant settings.
 
 ## Exam at a Glance
 
@@ -351,22 +349,3 @@ Common causes: wrong account, missing seat, policy block, unsupported feature, s
 - Security, privacy, licensing, and policy checks are always required.
 - Exclusions and public-code controls reduce risk but do not replace secure development.
 - Troubleshoot in order: account, entitlement, policy, client/version, scope/settings, and logs.
-
-## Exam Objective Checklist
-
-- **Domain 1 - Responsible use:** Can I explain hallucination risk, required human review, and accountability?
-- **Domain 2 - Copilot features:** Can I choose the right surface and safely approve CLI/Agent actions?
-- **Domain 3 - Data and architecture:** Can I describe context flow, limits, and how plan/policy/version affect data use?
-- **Domain 4 - Prompt engineering:** Can I write prompts with clear constraints and required verification steps?
-- **Domain 5 - Productivity:** Can I use Copilot for code, tests, and docs while keeping quality high?
-- **Domain 6 - Privacy and safeguards:** Can I apply exclusions, public-code controls, policy, licensing checks, and safe troubleshooting?
-
-### Local practice material
-
-- [Domain 1 — Responsible Use](domain-1-responsible-use.md)
-- [Domain 2 — Copilot Features](domain-2-copilot-features.md)
-- [Domain 3 — Data and Architecture](domain-3-data-and-architecture.md)
-- [Domain 4 — Prompt Engineering](domain-4-prompt-engineering.md)
-- [Domain 5 — Developer Productivity](domain-5-developer-productivity.md)
-- [Domain 6 — Privacy and Safeguards](domain-6-privacy-and-safeguards.md)
-- [Hands-On Lab Workbook](GH-300-Hands-On-Lab-Workbook.md)
