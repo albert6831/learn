@@ -2,6 +2,10 @@
 
 Last updated: September 20, 2026 - 07:23 AM EDT
 
+[Open the clean print view on GitHub Pages](https://albert6831.github.io/learn/)
+
+For local use before GitHub Pages is enabled, open [the local print view](gh-300-print.html) through a local web server.
+
 These notes follow the GH-300 skills outline in exam order. Product names, menus, plans, and feature availability can change, so confirm version-specific behavior in the current GitHub documentation and in the tenant used for practice.
 
 ## Exam at a Glance
