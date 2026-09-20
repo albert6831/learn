@@ -1,6 +1,6 @@
-# GH-300 Unified Deep Dive
+# GH-300 Study Notes
 
-Last updated: September 20, 2026 - 07:23 AM EDT
+Last updated: September 20, 2026 - 12:19 PM EDT
 
 [Open the clean print view on GitHub Pages](https://albert6831.github.io/learn/)
 
@@ -12,12 +12,12 @@ These notes follow the GH-300 exam order. **Product behavior can change by versi
 
 | Domain | Weight | Core exam question |
 | --- | --- | --- |
-| 1. Use GitHub Copilot responsibly | 15-20% | Can I use AI output safely and verify it? |
-| 2. Use GitHub Copilot features | 25-30% | Can I pick and use the right Copilot surface? |
-| 3. Understand Copilot data and architecture | 10-15% | Do I understand context, flow, and limits? |
-| 4. Apply prompt engineering and context crafting | 10-15% | Can I write clear prompts with useful context? |
-| 5. Improve developer productivity | 10-15% | Can I ship faster without lowering quality? |
-| 6. Configure privacy, content exclusions, and safeguards | 10-15% | Can I apply policy and troubleshoot protection? |
+| [1. Use GitHub Copilot responsibly](#1-use-github-copilot-responsibly-15-20) | 15-20% | Can I use AI output safely and verify it? |
+| [2. Use GitHub Copilot features](#2-use-github-copilot-features-25-30) | 25-30% | Can I pick and use the right Copilot surface? |
+| [3. Understand Copilot data and architecture](#3-understand-github-copilot-data-and-architecture-10-15) | 10-15% | Do I understand context, flow, and limits? |
+| [4. Apply prompt engineering and context crafting](#4-apply-prompt-engineering-and-context-crafting-10-15) | 10-15% | Can I write clear prompts with useful context? |
+| [5. Improve developer productivity with GitHub Copilot](#5-improve-developer-productivity-with-github-copilot-10-15) | 10-15% | Can I ship faster without lowering quality? |
+| [6. Configure privacy, content exclusions, and safeguards](#6-configure-privacy-content-exclusions-and-safeguards-10-15) | 10-15% | Can I apply policy and troubleshoot protection? |
 
 ### Core study loop (use this every time)
 
