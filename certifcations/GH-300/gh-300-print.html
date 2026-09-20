@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GH-300 Study Notes - Print View</title>
-  <meta name="last-updated" content="September 20, 2026 - 12:41 PM EDT">
+  <meta name="last-updated" content="">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
@@ -187,11 +187,12 @@
     </span>
   </header>
   <main id="notes">
-    <p class="status">Loading study notes... Last updated: September 20, 2026 - 12:41 PM EDT</p>
+    <p class="status">Loading study notes from GH-300-study-notes.md...</p>
   </main>
   <script>
     const sourceUrl = "GH-300-study-notes.md";
     const notes = document.getElementById("notes");
+    const status = document.querySelector(".status");
 
     fetch(sourceUrl)
       .then((response) => {
@@ -202,6 +203,13 @@
       })
       .then((markdown) => {
         notes.innerHTML = marked.parse(markdown);
+        const updated = markdown.match(/^Last updated:\s*(.+)$/m);
+        if (updated) {
+          document.querySelector('meta[name="last-updated"]').content = updated[1];
+          status.textContent = `Loaded from ${sourceUrl}. ${updated[0]}`;
+        } else {
+          status.textContent = `Loaded from ${sourceUrl}.`;
+        }
         document.title = "GH-300 Study Notes - Print View";
       })
       .catch((error) => {
