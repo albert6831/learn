@@ -81,6 +81,12 @@ Before accepting output:
 - **SAFE**: Safeguards, Accountability, Fairness, Ethics
 - **HINT**: Hallucinations, Incomplete context, Not automatic private-code access/training assumptions, Testing required
 
+### Exam focus (Domain 1)
+
+- Responsible AI is not optional. Keep human review in the loop.
+- Hallucinations happen. Verify facts, APIs, commands, and references.
+- Accountability stays with you and your team, not with the model.
+
 More safeguards appear in [Domain 6](#6-configure-privacy-content-exclusions-and-safeguards-10-15).
 
 ---
@@ -165,6 +171,12 @@ Use least privilege and test policy changes safely.
 
 **IDE + CLI + Chat + Edits + Agents + MCP + PR + Actions + Governance**
 
+### Remember (Domain 2)
+
+- Pick the smallest Copilot surface that fits the task.
+- CLI and Agent actions can run commands or change files.
+- Read the plan, scope, and commands before you approve.
+
 ---
 
 ## 3. Understand GitHub Copilot Data and Architecture (10-15%)
@@ -201,6 +213,12 @@ Use least privilege and test policy changes safely.
 
 Retention, training use, and data sharing depend on product/plan/terms/settings. Verify current documentation; do not rely on old blanket statements.
 
+### Exam focus (Domain 3)
+
+- Explain the flow: context -> request -> filtering -> model -> output -> human verification.
+- Context is relevant and limited, not always the full repository.
+- Product plan, policy, client, and version can change what data is used.
+
 ---
 
 ## 4. Apply Prompt Engineering and Context Crafting (10-15%)
@@ -236,6 +254,12 @@ Retention, training use, and data sharing depend on product/plan/terms/settings.
 ### Chat-history caution
 
 History helps, but old context can become wrong or disappear due to limits. Restate critical constraints when accuracy matters.
+
+### Remember (Domain 4)
+
+- Give clear constraints so output stays in scope.
+- Ask for checks, tests, and explicit assumptions.
+- Verify the final output against your real requirements.
 
 ---
 
@@ -280,6 +304,12 @@ Generated tests can be wrong or shallow. Run them and review assertions.
 - Performance: measure first; then optimize complexity, I/O, memory, batching, and caching.
 - Never trade correctness/security for unmeasured speed.
 
+### Exam focus (Domain 5)
+
+- Use Copilot to speed up code, tests, and docs.
+- Keep quality by reviewing output and running validation.
+- Fast output is useful only when it is correct, secure, and maintainable.
+
 ---
 
 ## 6. Configure Privacy, Content Exclusions, and Safeguards (10-15%)
@@ -316,33 +346,20 @@ Common causes: wrong account, missing seat, policy block, unsupported feature, s
 
 ---
 
-## High-Yield Review (Fast Recall)
+### Exam focus (Domain 6)
 
-### Ultra-high-yield facts
+- Security, privacy, licensing, and policy checks are always required.
+- Exclusions and public-code controls reduce risk but do not replace secure development.
+- Troubleshoot in order: account, entitlement, policy, client/version, scope/settings, and logs.
 
-- **LLMs predict patterns; they do not guarantee correctness.**
-- **Human review + testing are mandatory.**
-- Copilot uses relevant available context, not always the whole repo.
-- Plan/policy/client/version control what is available.
-- CLI/Agent actions can change files or run commands; approve carefully.
-- Security/privacy/licensing checks are always required.
+## Exam Objective Checklist
 
-### Quick memory sheet
-
-- **Behavior:** Predict, not prove.
-- **Flow:** Context -> request -> filter -> model -> output -> human verify.
-- **Limits:** hallucination, stale info, limited context, bias toward common patterns.
-- **Governance:** policy, exclusions, public-code controls, audit, accountability.
-
-### Final review checklist
-
-- Can I explain why Copilot output must be validated?
-- Can I pick the right surface (inline, chat, edits, agent, MCP, CLI)?
-- Can I describe context flow and safeguards?
-- Can I write prompts with clear constraints and checks?
-- Can I use Copilot for code/tests/docs while keeping quality high?
-- Can I explain exclusions, public-code controls, policy scopes, and limitations?
-- Can I troubleshoot missing suggestions safely?
+- **Domain 1 - Responsible use:** Can I explain hallucination risk, required human review, and accountability?
+- **Domain 2 - Copilot features:** Can I choose the right surface and safely approve CLI/Agent actions?
+- **Domain 3 - Data and architecture:** Can I describe context flow, limits, and how plan/policy/version affect data use?
+- **Domain 4 - Prompt engineering:** Can I write prompts with clear constraints and required verification steps?
+- **Domain 5 - Productivity:** Can I use Copilot for code, tests, and docs while keeping quality high?
+- **Domain 6 - Privacy and safeguards:** Can I apply exclusions, public-code controls, policy, licensing checks, and safe troubleshooting?
 
 ### Local practice material
 
